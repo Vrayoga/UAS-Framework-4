@@ -1,0 +1,55 @@
+<%- include('../partials_admin/__head.ejs') %>
+
+    <body>
+        <%- include('../partials_admin/__navbar.ejs') %>
+            <main id="main" class="main">
+
+                <div class="pagetitle">
+                    <h1>Outlet</h1>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/superusers">Home</a></li>
+                            <li class="breadcrumb-item active">Data Outlet</li>
+                            <li class="breadcrumb-item active">Create</li>
+                        </ol>
+                    </nav>
+
+                </div><!-- End Page Title -->
+
+                <section class="section dashboard">
+
+                    <div class="container">
+                        <h1 class="text-center mb-5">Input Data Outlet</h1>
+                        <form action="/outlet/store" method="POST">
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Nama Outlet</label>
+                                <input type="text" class="form-control" name="nama_outlet" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Alamat Outlet</label>
+                                <input type="text" class="form-control" name="Alamat_outlet" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">jam buka</label>
+                                <input type="text" class="form-control" name="jam_buka" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">jam tutup</label>
+                                <input type="text" class="form-control" name="jam_tutup" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="status_outlet" class="form-label">Status</label>
+                                <select class="form-select" aria-label="Pilih Tingkat Keahlian" name="status_outlet"
+                                    required>
+                                    <option selected>Status Outlet</option>
+                                    <option value="open">open</option>
+                                    <option value="close">close</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <button type="submit" class="btn btn-sm btn-success">Simpan</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <%- include('../partials_admin/__footer.ejs') %>

@@ -1,0 +1,77 @@
+<%- include('../partials_admin/__head.ejs') %>
+
+    <body>
+        <%- include('../partials_admin/__navbar.ejs') %>
+            <main id="main" class="main">
+
+                <div class="pagetitle">
+                    <h1>Menu</h1>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/superusers">Home</a></li>
+                            <li class="breadcrumb-item active">Data Outlet</li>
+                        </ol>
+                    </nav>
+                </div><!-- End Page Title -->
+
+                <section class="section dashboard">
+                    <div class="container mt-5">
+                        <%- include('../partials_admin/__messagess.ejs') %>
+                            <div class="row">
+                                <div class="col">
+                                    <a href="/outlet/create" class="btn btn-sm btn-success">Tambah</a>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">NO</th>
+                                                <th scope="col">Nama outlet</th>
+                                                <th scope="col">Alamat outlet</th>
+                                                <th scope="col">Jam buka</th>
+                                                <th scope="col">Jam tutup</th>
+                                                <th scope="col">Status</th>
+                                                <th colspan="2" scope="col">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% for(var i=0; i < data.length; i++){ %>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <%= (i+1) %>
+                                                    </th>
+                                                    <td>
+                                                        <%= data[i].nama_outlet %>
+                                                    </td>
+                                                    <td>
+                                                        <%= data[i].alamat_outlet %>
+                                                    </td>
+                                                    <td>
+                                                        <%= data[i].jam_buka %>
+                                                    </td>
+                                                    <td>
+                                                        <%= data[i].jam_tutup %>
+                                                    </td>
+                                                    <td>
+                                                        <%= data[i].status_outlet %>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/outlet/edit/<%= data[i].id_outlet %>"
+                                                            class="btn btn-sm btn-warning">Edit</a>
+                                                        <a href="/outlet/delete/<%= data[i].id_outlet %>"
+                                                            class="btn btn-sm btn-danger">Delete</a>
+                                                    </td>
+                                                </tr>
+                                                <%} %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                    </div>
+
+
+
+                </section>
+
+            </main><!-- End #main -->
+
+
+            <%- include('../partials_admin/__footer.ejs') %>
