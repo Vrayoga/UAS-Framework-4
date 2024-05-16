@@ -10,6 +10,7 @@ const MemoryStore = require('session-memory-store')(session);
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var superusersRouter = require('./routes/superusers');
+var kategoriRouter = require('./routes/kategori');
 var menuRouter = require('./routes/menu');
 var outletRouter = require('./routes/outlet');
 
@@ -43,6 +44,7 @@ app.use(flash())
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/superusers', superusersRouter);
+app.use('/kategori', kategoriRouter);
 app.use('/menu', menuRouter);
 app.use('/outlet', outletRouter);
 

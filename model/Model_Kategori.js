@@ -1,68 +1,66 @@
 const connection = require('../config/database');
 
 class Model_Kategori {
-
-    static async getAll(){
+    static async getAll() {
         return new Promise((resolve, reject) => {
-            connection.query('select * from kategori order by id_kategori desc', (err, rows) => {
-                if(err){
+            connection.query('Select * from kategori order by id_kategori desc', (err, rows) => {
+                if (err) {
                     reject(err);
-                } else {
+                }else {
                     resolve(rows);
                 }
-            });
-        });
+            }); 
+        }); 
     }
-
-    static async Store(Data){
+    
+    static async Store(Data) {
         return new Promise((resolve, reject) => {
-            connection.query('insert into kategori set ?', Data, function(err, result){
-                if(err){
+            connection.query('insert into kategori set ?', Data , function(err, result){
+                if (err) {
                     reject(err);
-                } else {
+                }else {
                     resolve(result);
                 }
-            })
-        });
+            }); 
+        }); 
     }
-
-    static async getId(id){
+    
+    static async getId(id) {
         return new Promise((resolve, reject) => {
-            connection.query('select * from kategori where id_kategori = ' + id, (err,rows) => {
-                if(err) {
+            connection.query('SELECT * FROM kategori where id_kategori = ' + id, (err, rows) => {
+                if (err) {
                     reject(err);
-                } else {
+                }else {
                     resolve(rows);
                 }
-            })
-        })
+            }); 
+        }); 
     }
-
+    
     static async Update(id, Data) {
         return new Promise((resolve, reject) => {
-            connection.query('update kategori set ? where id_kategori =' + id, Data, function(err, result){
-                if(err){
+            connection.query('update kategori set ? where id_kategori = ' + id, Data, function(err, result){
+                if (err) {
                     reject(err);
-                    console.log(err);
-                } else {
+                }else {
                     resolve(result);
                 }
-            })
-        });
+            }); 
+        }); 
     }
-
+    
     static async Delete(id) {
         return new Promise((resolve, reject) => {
-            connection.query('delete from kategori where id_kategori =' + id, function(err,result){
-                if(err) {
+            connection.query('delete from kategori where id_kategori = ' + id, function(err, result){
+                if (err) {
                     reject(err);
-                } else {
+                }else {
                     resolve(result);
                 }
-            })
-        });
+            }); 
+        }); 
     }
-
+    
 }
 
 

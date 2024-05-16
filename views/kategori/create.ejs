@@ -1,0 +1,30 @@
+<%- include('../partials_admin/__head.ejs') %>
+
+    <body>
+        <%- include('../partials_admin/__navbar.ejs') %>
+            <main id="main" class="main">
+
+                <div class="pagetitle">
+                    <h1>Menu</h1>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/superusers">Home</a></li>
+                            <li class="breadcrumb-item active"><a href="/kategori">Data Kategori</a></li>
+                            <li class="breadcrumb-item active">Create</li>
+                        </ol>
+                    </nav>
+                </div><!-- End Page Title -->
+
+                <section class="section dashboard">
+
+                    <form action="/kategori/store" method="POST">
+                        <div class="form-group">
+                            <label for="nama_kategori">Nama kategori</label>
+                            <input type="text" class="form-control" name="nama_kategori" required>
+                        </div>
+                        <button type="submit" class="btn btn-sm btn-success">Simpan</button>
+                    </form>
+                </section>
+            </main><!-- End #main -->
+
+            <%- include('../partials_admin/__footer.ejs') %>

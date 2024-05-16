@@ -1,0 +1,56 @@
+<%- include('../partials_admin/__head.ejs') %>
+
+    <body>
+        <%- include('../partials_admin/__navbar.ejs') %>
+            <main id="main" class="main">
+
+                <div class="pagetitle">
+                    <h1>Menu</h1>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/superusers">Home</a></li>
+                            <li class="breadcrumb-item active">Data Kategori</li>
+                        </ol>
+                    </nav>
+                </div>
+                <section class="section dashboard">
+                <div class="container">
+                    <div class="row">
+                        <%- include('../partials_admin/__messagess.ejs') %>
+                        <div class="col">
+                            <a href="/kategori/create" class="btn btn-sm btn-success">Tambah</a>
+                            <!-- Tabel KategokategoriSri -->
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Nama</th>
+                                        <th colspan="2" scope="col">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(var i=0; i < data.length; i++){ %>
+                                        <tr>
+                                            <th scope="row">
+                                                <%= (i+1) %>
+                                            </th>
+                                            <td>
+                                                <%= data[i].nama_kategori %>
+                                            </td>
+                                            <td>
+                                                <a href="/kategori/edit/<%= data[i].id_kategori %>"
+                                                    class="btn btn-sm btn-warning">Edit</a>
+                                                <a href="/kategori/delete/<%= data[i].id_kategori %>"
+                                                    class="btn btn-sm btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+            </main><!-- End #main -->
+
+            <%- include('../partials_admin/__footer.ejs') %>

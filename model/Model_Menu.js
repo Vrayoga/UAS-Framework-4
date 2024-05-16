@@ -1,6 +1,6 @@
 const connection = require('../config/database');
 
-class Model_Kategori {
+class Model_Menu {
 
     static async getAll(){
         return new Promise((resolve, reject) => {
@@ -72,4 +72,4 @@ class Model_Kategori {
 }
 
 
-module.exports = Model_Kategori;
+module.exports = Model_Menu;
