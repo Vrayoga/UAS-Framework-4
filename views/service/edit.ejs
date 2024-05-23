@@ -1,0 +1,35 @@
+<%- include('../partials_admin/__head.ejs') %>
+
+
+<body>
+    <%- include('../partials_admin/__navbar.ejs') %>
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+          <h1>Dashboard</h1>
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/superusers">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+          </nav>
+        </div><!-- End Page Title -->
+    
+        <section class="section dashboard">
+            <div class="container">
+                <h1 class="text-center mb-5">Edit Data Service</h1>
+                <form action="/service/update/<%= id %>" method="POST">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama Kategori</label>
+                        <input type="text" class="form-control" name="nama_service" value="<%=nama_service %>" required>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-sm btn-success">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    
+      </main><!-- End #main -->
+    
+    <%- include('../partials_admin/__footer.ejs') %>

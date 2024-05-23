@@ -1,0 +1,61 @@
+<%- include('../partials_admin/__head.ejs') %>
+
+<body>
+    <%- include('../partials_admin/__navbar.ejs') %>
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Dashboard</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/superusers">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section dashboard">
+
+            <div class="container">
+                <%- include('../partials_admin/__messagess.ejs') %>
+                <h1 class="text-center">Data Service</h1>
+                <div class="row">
+                    <div class="col">
+                        <a href="/service/create" class="btn btn-sm btn-success">Tambah</a>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nama</th>
+                                    <th colspan="2" scope="col">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(var i=0; i < data.length; i++){ %>
+                                <tr>
+                                    <th scope="row">
+                                        <%= (i+1) %>
+                                    </th>
+                                    <td>
+                                        <%= data[i].nama_service %>
+                                    </td>
+                                    <td>
+                                        <a href="/service/edit/<%= data[i].id_service %>"
+                                            class="btn btn-sm btn-warning">Edit</a>
+                                        <a href="/service/delete/<%= data[i].id_service %>"
+                                            class="btn btn-sm btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                                <%} %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+    </main><!-- End #main -->
+
+    <%- include('../partials_admin/__footer.ejs') %>

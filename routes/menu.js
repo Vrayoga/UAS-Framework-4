@@ -167,4 +167,19 @@ try{
 }
 })
 
+router.get('/users', async function (req, res, next) {
+    try{
+        let level_users = req.session.level;
+        let id = req.session.userId;
+        let Data = await Model_Users.getId(id);
+        let rows = await Model_Menu.getAll();
+        res.render('menu/users/index', {
+            data: rows,
+        })
+        } catch {
+            req.flash('invalid', 'Anda harus login');
+            res.redirect('/login')
+        }
+    });
+
 module.exports = router;

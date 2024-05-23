@@ -1,11 +1,16 @@
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
 -- Waktu pembuatan: 16 Bulan Mei 2024 pada 03.36
 -- Versi server: 8.0.30
 -- Versi PHP: 8.2.18
+-- Host: localhost:3306
+-- Generation Time: May 15, 2024 at 07:30 PM
+-- Server version: 8.0.30
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +29,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -111,7 +116,7 @@ CREATE TABLE `service` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -138,7 +143,7 @@ INSERT INTO `users` (`id_users`, `nama`, `email`, `password`, `no_telp`, `alamat
 --
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
@@ -171,17 +176,44 @@ ALTER TABLE `service`
   ADD PRIMARY KEY (`id_service`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`id_menu`),
+  ADD KEY `kategoriMenu` (`id_kategori`);
+
+--
+-- Indexes for table `outlet`
+--
+ALTER TABLE `outlet`
+  ADD PRIMARY KEY (`id_outlet`);
+
+--
+-- Indexes for table `pembayaran`
+--
+ALTER TABLE `pembayaran`
+  ADD PRIMARY KEY (`id_pembayaran`),
+  ADD KEY `menuPembayaran` (`id_menu`),
+  ADD KEY `userPembayaran` (`id_users`);
+
+--
+-- Indexes for table `service`
+--
+ALTER TABLE `service`
+  ADD PRIMARY KEY (`id_service`);
+
+--
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_users`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `kategori`
+-- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
@@ -211,7 +243,31 @@ ALTER TABLE `service`
   MODIFY `id_service` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `id_menu` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `outlet`
+--
+ALTER TABLE `outlet`
+  MODIFY `id_outlet` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pembayaran`
+--
+ALTER TABLE `pembayaran`
+  MODIFY `id_pembayaran` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `service`
+--
+ALTER TABLE `service`
+  MODIFY `id_service` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id_users` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;

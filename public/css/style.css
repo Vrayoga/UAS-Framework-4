@@ -1,0 +1,649 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/*---GLOBAL STYLE---*/
+body, h1, h2, h3, h4, h5, h6, p, a, button, span, div {
+  font-family: 'Varela Round', sans-serif;
+}
+
+/*---BODY---*/
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/*---HEADER---*/
+header {
+  background-color: white;
+  padding: 10px 20px;
+}
+
+/*---NAVIGATION---*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*---LOGO---*/
+.logo img {
+  height: 140px;
+  margin-left: 50px; /* Geser logo ke kiri */
+}
+
+/*---MENU---*/
+.menu {
+  list-style-type: none;
+  display: flex;
+}
+
+/*---MENU ITEMS---*/
+.menu li {
+  margin-right: 20px;
+}
+
+/*---MENU LINKS---*/
+.menu li a {
+  text-decoration: none;
+  color: #808080; /* warna abu-abu */
+  font-weight: bold; /* font gemuk */
+}
+
+/*---MENU LINKS HOVER EFFECT---*/
+.menu li a:hover {
+  color: black; /* warna hitam */
+}
+
+/*---CART BUTTON---*/
+.cart-btn {
+  background-color: #d91319;
+  border: none;
+  padding: 5px 10px; /* Ubah padding */
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  height: 30px; /* Tinggi button */
+  width: 60px;
+}
+
+/*---CART BUTTON HOVER EFFECTS---*/
+.cart-btn:hover .cart-icon {
+  color: black; /* warna hitam saat dihover */
+}
+.cart-btn:hover .cart-count {
+  background-color: white; /* warna putih saat dihover */
+}
+.cart-btn:hover .cart-text {
+  color: black; /* warna hitam saat dihover */
+}
+
+/*---CART ICON---*/
+.cart-icon {
+  margin-right: 5px;
+  fill: white; /* warna putih */
+  height: 20px; /* sesuaikan ukuran ikon */
+}
+
+/*---CART COUNT---*/
+.cart-count {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  background-color: rgb(255, 255, 255);
+  color: #d91319; 
+  width: 20px;
+  height: 17px;
+  border-radius: 30%;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*---ORDER BUTTON---*/
+.order-btn {
+  background-color: #d91319; /* warna merah */
+  border: none;
+  color: white;
+  padding: 5px 10px; /* Ubah padding */
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold; /* font gemuk */
+  transition: background-color 0.3s;
+  height: 30px; /* Tinggi button */
+}
+
+/*---ORDER BUTTON HOVER EFFECT---*/
+.order-btn:hover {
+  background-color: #d91319;
+  color: black;
+}
+
+/*---NAV IMAGE---*/
+.nav-image {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/*---LOGIN BUTTON---*/
+.login-button,
+.icon-button {
+  position: absolute;
+  top: 6px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold; /* font gemuk */
+  margin-left: 1100px;
+}
+
+/*---ICON BUTTON---*/
+.icon-button {
+  right: 65px;
+}
+
+/*---LOGIN ICON---*/
+.login-icon {
+  fill: white;
+  height: 20px;
+  margin-left: 5px; /* Perubahan di sini */
+}
+
+/*---CART AND ORDER CONTAINER---*/
+.cart-and-order {
+  display: flex;
+  align-items: center;
+  height: 30px; /* Tinggi button */
+}
+
+/*---CART AND ORDER BUTTON MARGIN---*/
+.cart-and-order > button {
+  margin-right: 10px;
+}
+
+/*---CART TEXT---*/
+.cart-text {
+  transition: color 0.3s;
+}
+
+/*---PHOTO SECTION---*/
+.photo-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  position: relative;
+}
+
+/*---PHOTO LEFT---*/
+.photo.left {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  position: relative;
+  width: 10%;
+  height: auto;
+  margin-left: -10px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 1;
+}
+
+/*---PHOTO CENTER---*/
+.photo.center {
+  width: 80%;
+  transition: opacity 0.5s ease-in-out; /* Transisi yang lebih halus */
+  margin-top: -500px;
+}
+
+/*---PHOTO RIGHT---*/
+.photo.right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  position: relative;
+  width: 10%;
+  height: auto;
+  margin-left: 1147px;
+  margin-top: -500px;
+  position: relative;
+  z-index: 1;
+}
+
+/*---REKOMENDASI SECTION---*/
+.rekomendasi-section {
+  margin-top: 100px; /* Jarak antara section rekomendasi dan section sebelumnya */
+}
+
+/*---REKOMENDASI TITLE---*/
+.rekomendasi-title {
+  color: #d91319; /* Warna teks merah */
+  font-family: 'Varela Round', sans-serif; /* Font untuk judul */
+  font-weight: 900 !important; /* Teks sangat tebal */
+  text-align: center; /* Rata tengah */
+  margin-bottom: 20px; /* Jarak bawah judul */
+  font-size: 30px;
+}
+
+/*---REKOMENDASI CARDS CONTAINER---*/
+.rekomendasi-cards {
+  display: flex;
+  flex-wrap: wrap; /* Mengizinkan card untuk membungkus ke baris berikutnya */
+  justify-content: space-around; /* Spasi rata antara card */
+  gap: 20px; /* Jarak antar card */
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+/*---CARD---*/
+.card {
+  width: 25%; /* Lebar card */
+  border: 1px solid #ccc; /* Garis border abu-abu */
+  border-radius: 10px; /* Sudut border melengkung */
+  text-align: center; /* Teks rata tengah */
+  padding: 20px;
+}
+
+/*---CARD IMAGE---*/
+.card-image {
+  width: 100%; /* Lebar gambar penuh dalam card */
+  border-radius: 5px; /* Sudut gambar melengkung */
+}
+
+/*---KETERANGAN---*/
+.keterangan {
+  text-align: center; /* Rata tengah teks */
+  margin-top: 20px;
+}
+
+.keterangan p {
+  margin: 5px 0; /* Jarak antara paragraf */
+}
+
+.keterangan strong {
+  font-size: 15px;
+}
+
+.keterangan p:nth-of-type(2) {
+  font-size: 14px;
+  margin-top: -5px;
+}
+
+.keterangan p:nth-of-type(3) {
+  color: #d91319;
+  font-weight: bolder;
+  font-size: 14px;
+  margin-top: 17px;
+}
+
+/*---DETAILS & PESAN BUTTON---*/
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.details p {
+  color: #d91319;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: bolder;
+  margin-left: 40px;
+}
+
+.details p:hover {
+  color: rgb(0, 0, 180) !important;
+}
+
+.pesan-button {
+  background-color: #fdb813; /* Warna kuning tua */
+  color: black; /* Warna teks hitam */
+  border: none;
+  border-radius: 20px; /* Border melengkung */
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bolder;
+  margin-right: 40px;
+}
+
+/*---INFORMASI SECTION---*/
+.informasi-section {
+  background-color: #fdb813; /* Warna latar belakang kuning */
+  padding: 50px 0 20px; /* Padding atas dan bawah, kurangi padding bawah */
+  text-align: center; /* Teks rata tengah */
+  margin-top: 50px;
+}
+
+/*---INFORMASI CONTENT---*/
+.informasi-content {
+  margin: 0 auto;
+  max-width: 600px; /* Maksimum lebar konten */
+}
+
+/*---FOTO JAM---*/
+.foto-jam {
+  display: block; /* Agar gambar berada di tengah */
+  margin: 0 auto 20px; /* Posisi tengah dengan margin bawah 20px */
+  width: 10%;
+  margin-top: -45px;
+}
+
+/*---INFO TEXT 1---*/
+.info-text-1 {
+  color: black; /* Warna teks hitam */
+  font-weight: bold; /* Teks sangat tebal */
+  font-size: 24px; /* Ukuran font */
+  margin-top: -20px; /* Jarak atas */
+}
+
+/*---INFO TEXT 2---*/
+.info-text-2 {
+  color: #d91319; /* Warna teks merah maroon */
+  font-weight: bolder; /* Teks sangat tebal */
+  font-size: 30px; /* Ukuran font */
+  margin-top: -15px; /* Jarak atas */
+}
+
+/*---INFO TEXT 3---*/
+.info-text-3 {
+  color: black; /* Warna teks hitam */
+  font-weight: bold; /* Teks sangat tebal */
+  font-size: 15px; /* Ukuran font */
+  margin-top: -20px; /* Jarak atas */
+}
+
+/*---INLINE ELEMENTS---*/
+.inline-elements {
+  display: flex; /* Menggunakan Flexbox untuk sejajar */
+  align-items: center; /* Vertikal tengah */
+  justify-content: center; /* Horizontal tengah */
+  gap: 10px; /* Jarak antar elemen */
+  margin-top: -10px; /* Jarak atas */
+  margin-bottom: -20px; /* Kurangi ruang kosong di bagian bawah */
+}
+
+/*---ORDER BUTTON 2---*/
+.order-btn-2 {
+  background-color: #d91319; /* Warna merah */
+  border: none;
+  color: white;
+  padding: 10px 20px; /* Padding */
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold; /* Font gemuk */
+  transition: color 0.3s; /* Transisi untuk warna teks */
+}
+
+/*---ORDER BUTTON 2 HOVER EFFECT---*/
+.order-btn-2:hover {
+  color: black; /* Warna teks hitam saat hover */
+}
+
+/*---INFO TEXT 4---*/
+.info-text-4 {
+  color: black; /* Warna teks hitam */
+  font-weight: bold; /* Teks sangat tebal */
+  font-size: 20px; /* Ukuran font */
+}
+
+/*---HOKBEN DELIVER IMAGE---*/
+.hokben-deliver {
+  height: 40px; /* Sesuaikan tinggi gambar */
+}
+
+/*---FOOTER SECTION---*/
+.footer-section {
+  background-color: white; /* Warna latar belakang putih */
+  padding: 20px 0;
+  text-align: left; /* Teks rata kiri */
+  color: #333; /* Warna teks default */
+}
+
+/*---FOOTER CONTENT---*/
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Ruang antara elemen */
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Padding untuk keselarasan */
+}
+
+/*---FOOTER SECTION---*/
+.footer-section {
+  background-color: white; /* Warna latar belakang putih */
+  padding: 20px 0;
+  text-align: left; /* Teks rata kiri */
+  color: #333; /* Warna teks default */
+}
+
+/*---FOOTER CONTENT---*/
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Ruang antara elemen */
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Padding untuk keselarasan */
+}
+
+/*---FOOTER LINKS---*/
+.footer-links {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+  margin-left: 80px;
+}
+
+.footer-title {
+  color: #000000; /* Warna abu-abu gelap */
+  font-size: 20px;
+  font-weight: bolder; /* Bercetak tebal */
+  margin-bottom: 10px;
+}
+
+.footer-links-group {
+  display: flex;
+}
+
+.footer-links-column {
+  flex: 1;
+}
+
+.footer-links-column-2 {
+  flex: 1;
+  margin-right: 700px;
+}
+
+.footer-text {
+  color: #000000; /* Warna abu-abu terang */
+  font-weight: bolder; /* Bercetak tebal */
+  margin: 5px 0;
+}
+
+.footer-text a {
+  color: #9b9b9b; /* Warna abu-abu terang */
+  text-decoration: none; /* Hilangkan garis bawah default */
+  transition: color 0.3s, text-decoration 0.3s; /* Transisi untuk efek hover */
+}
+
+.footer-text a:hover {
+  text-decoration: underline; /* Garis bawah saat hover */
+}
+
+/* Tambahkan gaya CSS ini untuk mengatur posisi logo HokBen */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 550px;
+  margin-top: -120px;
+}
+
+/* Tambahkan gaya CSS ini untuk mengatur ukuran logo HokBen */
+.gambar-footer {
+  width: 20%; /* Sesuaikan ukuran sesuai kebutuhan */
+  margin-left: auto; /* Logo akan muncul di sebelah kanan */
+}
+
+.footer-sosmed {
+  margin-left: 900px;
+  margin-top: -110px;
+}
+
+/* Tambahkan gaya CSS untuk ikuti kami */
+.ikuti-kami {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-left: 70px;
+}
+
+/* Tambahkan gaya CSS untuk gambar sosial media */
+.footer-sosmed img {
+  width: 30px; /* Sesuaikan ukuran sesuai kebutuhan */
+  margin-right: 10px; /* Jarak antar gambar */
+  margin-top: 5px;
+}
+
+/* Tambahkan gaya CSS untuk gambar sosial media tambahan */
+.sosmed-extra-1 {
+  width: 10%; /* Sesuaikan ukuran sesuai kebutuhan */
+  margin-left: 900px;
+  margin-top: -5px;
+}
+
+.sosmed-extra-2 {
+  width: 9%; /* Sesuaikan ukuran sesuai kebutuhan */
+  margin-top: -62px;
+  margin-left: 1030px;
+}
+
+.text-footer {
+  margin-top: -20px;
+}
+
+.text-footer p{
+  width: 70%;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 13px;
+  color: #000000;
+  margin-top: 50px;
+  margin-left: 200px;
+  text-align: center;
+}
+
+.bg-footer {
+  width: 100%;
+  padding: 0;
+  margin-bottom: -20px;
+}
+
+/*---MENU----*/
+
+/*---MENU Section----*/
+.sectionMenu {
+  background-color: #fcb900; /* Warna latar belakang kuning */
+  padding: 25.5px;
+  justify-content: center;
+}
+
+.letakMenu {
+  color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Anda bisa menyesuaikan lebar maksimum sesuai kebutuhan */
+    position: relative;
+    padding: 0 20px; /* Tambahkan padding untuk memberikan ruang di sisi kiri dan kanan */
+}
+
+.hokbenMenu {
+    font-size: 30px;
+    flex: 1;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+}
+
+.hokbenSearch {
+  color: white;
+    margin-left: auto;
+}
+
+/* Pilihan Menu */
+/*---REKOMENDASI SECTION---*/
+.Menu-section {
+  margin-top: 100px; /* Jarak antara section Menu dan section sebelumnya */
+}
+
+/*---Menu TITLE---*/
+.Menu-title {
+  color: #d91319; /* Warna teks merah */
+  font-family: 'Varela Round', sans-serif; /* Font untuk judul */
+  font-weight: 900 !important; /* Teks sangat tebal */
+  text-align: center; /* Rata tengah */
+  margin-bottom: 20px; /* Jarak bawah judul */
+  font-size: 30px;
+}
+
+/*---Menu CARDS CONTAINER---*/
+.Menu-cards {
+  display: flex;
+  flex-wrap: wrap; /* Mengizinkan card untuk membungkus ke baris berikutnya */
+  justify-content: space-around; /* Spasi rata antara card */
+  gap: 20px; /* Jarak antar card */
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+/*---CARD---*/
+.card {
+  width: 25%; /* Lebar card */
+  border: 1px solid #ccc; /* Garis border abu-abu */
+  border-radius: 10px; /* Sudut border melengkung */
+  text-align: center; /* Teks rata tengah */
+  padding: 20px;
+}
+
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.menu-button {
+  background-color: white;
+  border: 2px solid red;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: red;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-button.active,
+.menu-button:hover {
+  background-color: red;
+  color: white;
+}
+
+.menu-button:focus {
+  outline: none;
+}
+
+/* */

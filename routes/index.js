@@ -6,8 +6,12 @@ const bcrypt = require('bcrypt');
 var Model_Users = require('../model/Model_Users')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', async function(req, res, next) {
+  let rows = await Model_Users.getAll();
+  res.render('auth/dashboard', {
+    title: 'Dashboard', // Menggunakan email pengguna
+    data : rows // Menggunakan data dari Model_Konser
+  });
 });
 
 router.get('/register', function(req, res, next) {

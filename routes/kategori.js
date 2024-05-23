@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-var connection = require('../config/Database.js');
 var Model_Kategori = require('../model/Model_Kategori.js');
 
 router.get('/', async function(req, res, next) {

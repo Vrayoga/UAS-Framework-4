@@ -1,10 +1,10 @@
 const connection = require('../config/database');
 
-class Model_Kategori {
+class Model_Service {
 
     static async getAll(){
         return new Promise((resolve, reject) => {
-            connection.query('select * from kategori order by id_kategori desc', (err, rows) => {
+            connection.query('select * from service order by id_service desc', (err, rows) => {
                 if(err){
                     reject(err);
                 } else {
@@ -16,7 +16,7 @@ class Model_Kategori {
 
     static async Store(Data){
         return new Promise((resolve, reject) => {
-            connection.query('insert into kategori set ?', Data, function(err, result){
+            connection.query('insert into service set ?', Data, function(err, result){
                 if(err){
                     reject(err);
                 } else {
@@ -28,7 +28,7 @@ class Model_Kategori {
 
     static async getId(id){
         return new Promise((resolve, reject) => {
-            connection.query('select * from kategori where id_kategori = ' + id, (err,rows) => {
+            connection.query('select * from service where id_service = ' + id, (err,rows) => {
                 if(err) {
                     reject(err);
                 } else {
@@ -40,7 +40,7 @@ class Model_Kategori {
 
     static async Update(id, Data) {
         return new Promise((resolve, reject) => {
-            connection.query('update kategori set ? where id_kategori =' + id, Data, function(err, result){
+            connection.query('update service set ? where id_service =' + id, Data, function(err, result){
                 if(err){
                     reject(err);
                     console.log(err);
@@ -53,7 +53,7 @@ class Model_Kategori {
 
     static async Delete(id) {
         return new Promise((resolve, reject) => {
-            connection.query('delete from kategori where id_kategori =' + id, function(err,result){
+            connection.query('delete from service where id_service =' + id, function(err,result){
                 if(err) {
                     reject(err);
                 } else {
@@ -66,4 +66,4 @@ class Model_Kategori {
 }
 
 
-module.exports = Model_Kategori;
+module.exports = Model_Service;
