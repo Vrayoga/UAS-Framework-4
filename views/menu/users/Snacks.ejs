@@ -12,7 +12,7 @@
 
         <img src="../../images/nav_login.png" alt="Gambar Atas" class="nav-image">
         <button class="login-button">
-            Masuk
+            <%=email %>
         </button>
         <button class="icon-button" style="margin-right: 90px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-fill login-icon" viewBox="0 0 16 16">
@@ -29,8 +29,8 @@
         
                 <!-- Menu -->
                 <ul class="menu">
-                    <li><a href="#" class="active">Beranda</a></li>
-                    <li><a href="#">Menu</a></li>
+                    <li><a href="/users" class="active">Beranda</a></li>
+                    <li><a href="/menu/users/HokaRamen">Menu</a></li>
                     <li><a href="#">Outlet</a></li>
                     <li><a href="#">Promo</a></li>
                     <li><a href="#">Perusahaan</a></li>
@@ -65,17 +65,17 @@
         <!-- Rekomendasi Section -->
         <section class="Menu-section">
             <div class="menu-container">
-                <button class="menu-button active">Hoka Ramen</button>
-                <button class="menu-button">Set Menu</button>
-                <button class="menu-button">Main Menu</button>
-                <button class="menu-button">HokBen Fried Chicken</button>
-                <button class="menu-button">Fried Menu</button>
-                <button class="menu-button">Soup & Sukiyaki</button>
-                <button class="menu-button">Desserts</button>
-                <button class="menu-button">Snacks</button>
-                <button class="menu-button">Beverages</button>
-                <button class="menu-button">Side Dish</button>
-                <button class="menu-button">Take Away Bag</button>
+                <a href="/menu/users/HokaRamen" class="menu-button">Hoka Ramen</a>
+                <a href="/menu/users/SetMenu" class="menu-button">Set Menu</a>
+                <a href="/menu/users/MainMenu" class="menu-button">Main Menu</a>
+                <a href="/menu/users/HokbenFriedChicken" class="menu-button">HokBen Fried Chicken</a>
+                <a href="/menu/users/FriedMenu" class="menu-button">Fried Menu</a>
+                <a href="/menu/users/Soup" class="menu-button">Soup & Sukiyaki</a>
+                <a href="/menu/users/Desserts" class="menu-button">Desserts</a>
+                <a href="/menu/users/Snacks" class="menu-button active">Snacks</a>
+                <a href="/menu/users/Beverages" class="menu-button">Beverages</a>
+                <a href="/menu/users/SideDish" class="menu-button">Side Dish</a>
+                <a href="/menu/users/TakeAwayBag" class="menu-button">Take Away Bag</a>
             </div>
             <div class="Menu-cards">
                 <div class="card">

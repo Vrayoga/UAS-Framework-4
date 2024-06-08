@@ -13,6 +13,7 @@ router.get('/', async function(req, res, next) {
         res.redirect('/logout')
       }else{res.render('users/index', {
         title: 'Users Home',
+        email: Data[0].email
       });
     }
     // akhir kondisi

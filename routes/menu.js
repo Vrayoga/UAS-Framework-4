@@ -167,19 +167,172 @@ try{
 }
 })
 
-router.get('/users', async function (req, res, next) {
+router.get('/users/HokaRamen', async function (req, res, next) {
     try{
         let level_users = req.session.level;
         let id = req.session.userId;
         let Data = await Model_Users.getId(id);
         let rows = await Model_Menu.getAll();
-        res.render('menu/users/index', {
+        res.render('menu/users/HokaRamen', {
             data: rows,
+            email: Data[0].email
         })
         } catch {
             req.flash('invalid', 'Anda harus login');
             res.redirect('/login')
         }
     });
+
+    router.get('/users/SetMenu', async function (req, res, next) {
+        try{
+            let level_users = req.session.level;
+            let id = req.session.userId;
+            let Data = await Model_Users.getId(id);
+            let rows = await Model_Menu.getAll();
+            res.render('menu/users/SetMenu', {
+                data: rows,
+                email: Data[0].email
+            })
+            } catch {
+                req.flash('invalid', 'Anda harus login');
+                res.redirect('/login')
+            }
+        });
+    router.get('/users/MainMenu', async function (req, res, next) {
+        try{
+            let level_users = req.session.level;
+            let id = req.session.userId;
+            let Data = await Model_Users.getId(id);
+            let rows = await Model_Menu.getAll();
+            res.render('menu/users/MainMenu', {
+                data: rows,
+                email: Data[0].email
+            })
+            } catch {
+                req.flash('invalid', 'Anda harus login');
+                res.redirect('/login')
+            }
+        });
+    router.get('/users/HokbenFriedChicken', async function (req, res, next) {
+        try{
+            let level_users = req.session.level;
+            let id = req.session.userId;
+            let Data = await Model_Users.getId(id);
+            let rows = await Model_Menu.getAll();
+            res.render('menu/users/HokbenFriedChicken', {
+                data: rows,
+                email: Data[0].email
+            })
+            } catch {
+                req.flash('invalid', 'Anda harus login');
+                res.redirect('/login')
+            }
+        });
+    router.get('/users/FriedMenu', async function (req, res, next) {
+        try{
+            let level_users = req.session.level;
+            let id = req.session.userId;
+            let Data = await Model_Users.getId(id);
+            let rows = await Model_Menu.getAll();
+            res.render('menu/users/FriedMenu', {
+                data: rows,
+                email: Data[0].email
+            })
+            } catch {
+                req.flash('invalid', 'Anda harus login');
+                res.redirect('/login')
+            }
+        });
+    router.get('/users/Soup', async function (req, res, next) {
+        try{
+            let level_users = req.session.level;
+            let id = req.session.userId;
+            let Data = await Model_Users.getId(id);
+            let rows = await Model_Menu.getAll();
+            res.render('menu/users/Soup', {
+                data: rows,
+                email: Data[0].email
+            })
+            } catch {
+                req.flash('invalid', 'Anda harus login');
+                res.redirect('/login')
+            }
+        });
+    router.get('/users/Desserts', async function (req, res, next) {
+        try{
+            let level_users = req.session.level;
+            let id = req.session.userId;
+            let Data = await Model_Users.getId(id);
+            let rows = await Model_Menu.getAll();
+            res.render('menu/users/Desserts', {
+                data: rows,
+                email: Data[0].email
+            })
+            } catch {
+                req.flash('invalid', 'Anda harus login');
+                res.redirect('/login')
+            }
+        });
+    router.get('/users/Snacks', async function (req, res, next) {
+        try{
+            let level_users = req.session.level;
+            let id = req.session.userId;
+            let Data = await Model_Users.getId(id);
+            let rows = await Model_Menu.getAll();
+            res.render('menu/users/Snacks', {
+                data: rows,
+                email: Data[0].email
+            })
+            } catch {
+                req.flash('invalid', 'Anda harus login');
+                res.redirect('/login')
+            }
+        });
+    router.get('/users/Beverages', async function (req, res, next) {
+        try{
+            let level_users = req.session.level;
+            let id = req.session.userId;
+            let Data = await Model_Users.getId(id);
+            let rows = await Model_Menu.getAll();
+            res.render('menu/users/Beverages', {
+                data: rows,
+                email: Data[0].email
+            })
+            } catch {
+                req.flash('invalid', 'Anda harus login');
+                res.redirect('/login')
+            }
+        });
+    router.get('/users/SideDish', async function (req, res, next) {
+        try{
+            let level_users = req.session.level;
+            let id = req.session.userId;
+            let Data = await Model_Users.getId(id);
+            let rows = await Model_Menu.getAll();
+            res.render('menu/users/SideDish', {
+                data: rows,
+                email: Data[0].email
+            })
+            } catch {
+                req.flash('invalid', 'Anda harus login');
+                res.redirect('/login')
+            }
+        });
+    router.get('/users/TakeAwayBag', async function (req, res, next) {
+        try{
+            let level_users = req.session.level;
+            let id = req.session.userId;
+            let Data = await Model_Users.getId(id);
+            let rows = await Model_Menu.getAll();
+            res.render('menu/users/TakeAwayBag', {
+                data: rows,
+                email: Data[0].email
+            })
+            } catch {
+                req.flash('invalid', 'Anda harus login');
+                res.redirect('/login')
+            }
+        });
+
 
 module.exports = router;

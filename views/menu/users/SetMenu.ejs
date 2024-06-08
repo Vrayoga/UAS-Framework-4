@@ -5,14 +5,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css"> <!-- Tautan ke file CSS -->
+<link rel="stylesheet" href="../../css/style.css"> <!-- Tautan ke file CSS -->
 
 </head>
     <body>
 
-        <img src="images/nav_login.png" alt="Gambar Atas" class="nav-image">
+        <img src="../../images/nav_login.png" alt="Gambar Atas" class="nav-image">
         <button class="login-button">
-            <%= email %>
+            <%=email %>
         </button>
         <button class="icon-button" style="margin-right: 90px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-fill login-icon" viewBox="0 0 16 16">
@@ -24,7 +24,7 @@
             <nav>
                 <!-- Logo -->
                 <div class="logo">
-                    <img src="images/HOKBEN.png" alt="Logo">
+                    <img src="../../images/HOKBEN.png" alt="Logo">
                 </div>
         
                 <!-- Menu -->
@@ -49,19 +49,37 @@
             </nav>
         </header>
 
-        <!-- Photo Section -->
-        <img src="images/gambar_samping1.png" alt="Photo 1" class="photo left">
-        <section class="photo-section">
-            <img src="images/sponsor1.png" alt="Photo 2" class="photo center" id="center-photo">
+        <!-- Informasi Section -->
+        <section class="sectionMenu">
+            <div class="letakMenu">
+                <!-- Tiga Elemen dalam Satu Baris -->
+                   <h1 class="hokbenMenu">
+                    MENU  |  メニュー
+                 </h1>
+                 <a class="hokbenSearch" href="https://www.hokben.co.id/menu/search"><i class="fa fa-search"></i>
+                    Search</a>
+                </div>
+            </div>
         </section>
-        <img src="images/gambar_samping2.png" alt="Photo 3" class="photo right">
         
         <!-- Rekomendasi Section -->
-        <section class="rekomendasi-section">
-            <h2 class="rekomendasi-title">REKOMENDASI</h2>
-            <div class="rekomendasi-cards">
+        <section class="Menu-section">
+            <div class="menu-container">
+                <a href="/menu/users/HokaRamen" class="menu-button">Hoka Ramen</a>
+                <a href="/menu/users/SetMenu" class="menu-button active">Set Menu</a>
+                <a href="/menu/users/MainMenu" class="menu-button">Main Menu</a>
+                <a href="/menu/users/HokbenFriedChicken" class="menu-button">HokBen Fried Chicken</a>
+                <a href="/menu/users/FriedMenu" class="menu-button">Fried Menu</a>
+                <a href="/menu/users/Soup" class="menu-button">Soup & Sukiyaki</a>
+                <a href="/menu/users/Desserts" class="menu-button">Desserts</a>
+                <a href="/menu/users/Snacks" class="menu-button">Snacks</a>
+                <a href="/menu/users/Beverages" class="menu-button">Beverages</a>
+                <a href="/menu/users/SideDish" class="menu-button">Side Dish</a>
+                <a href="/menu/users/TakeAwayBag" class="menu-button">Take Away Bag</a>
+            </div>
+            <div class="Menu-cards">
                 <div class="card">
-                    <img src="images/rek1.png" alt="Product 1" class="card-image">
+                    <img src="../../images/rek1.png" alt="Product 1" class="card-image">
                     <div class="keterangan">
                         <p><strong>HOKA HEMAT 1</strong></p>
                         <p>お得なセット</p>
@@ -73,7 +91,7 @@
                     </div>
                 </div>                
                 <div class="card">
-                    <img src="images/rek2.png" alt="Product 2" class="card-image">
+                    <img src="../../images/rek2.png" alt="Product 2" class="card-image">
                     <div class="keterangan">
                         <p><strong>HOKA HEMAT 3</strong></p>
                         <p>お得なセット</p>
@@ -85,7 +103,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="images/rek3.png" alt="Product 3" class="card-image">
+                    <img src="../../images/rek3.png" alt="Product 3" class="card-image">
                     <div class="keterangan">
                         <p><strong>PAKET C</strong></p>
                         <p>C セット</p>
@@ -97,7 +115,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="images/rek4.png" alt="Product 4" class="card-image">
+                    <img src="../../images/rek4.png" alt="Product 4" class="card-image">
                     <div class="keterangan">
                         <p><strong>SIMPLE SET CHICKEN TERIYAKI 1</strong></p>
                         <p>シンプルセット照り焼き１</p>
@@ -109,7 +127,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="images/rek5.png" alt="Product 5" class="card-image">
+                    <img src="../../images/rek5.png" alt="Product 5" class="card-image">
                     <div class="keterangan">
                         <p><strong>HOKA HEMAT 2</strong></p>
                         <p>お得なセット</p>
@@ -124,33 +142,13 @@
         </section>
 
         <!-- Informasi Section -->
-        <section class="informasi-section">
-            <div class="informasi-content">
-                <!-- Foto Jam -->
-                <img src="images/jam.png" alt="Foto Jam" class="foto-jam">
-
-                <!-- Kalimat "Kami Pastikan" -->
-                <p class="info-text-1">Kami Pastikan</p>
-
-                <!-- Kalimat "Produk akan terkirim tepat Waktu" -->
-                <p class="info-text-2">Produk akan terkirim tepat Waktu</p>
-
-                <!-- Kalimat "Jika Anda mengadakan rapat..." -->
-                <p class="info-text-3">Jika Anda mengadakan rapat, bekerja larut malam dan perlu dorongan ekstra. Beri tahu kami dan kami akan berada di sana.</p>
-            
-                <!-- Tiga Elemen dalam Satu Baris -->
-                <div class="inline-elements">
-                    <button class="order-btn-2">Pesan Sekarang</button>
-                    <p class="info-text-4">ATAU</p>
-                    <img src="images/hokben_delivery.png" alt="Foto Hokben deliver" class="hokben-deliver">
-                </div>
-            </div>
-        </section>
-
+        
+        
         <!-- Footer Section -->
         <section class="footer-section">
             <div class="footer-content">
                 <div class="footer-links">
+                    <p class="mt-3" style="font-weight: bold;">* Salad & Soup only for Dine In</p>
                     <h3 class="footer-title">TAUTAN</h3>
                     <div class="footer-links-group">
                         <div class="footer-links-column">
@@ -166,28 +164,30 @@
                 </div>
             </div>
             <div class="footer-logo">
-                <img src="images/deliver.png" alt="Logo footer" class="gambar-footer">
+                <img src="../../images/deliver.png" alt="Logo footer" class="gambar-footer">
             </div>
             <div class="footer-sosmed">
                 <p class="footer-text ikuti-kami">IKUTI KAMI</p>
-                <img src="images/yt.png" alt="Logo YouTube">
-                <img src="images/tweet.png" alt="Logo Twitter">
-                <img src="images/fb.png" alt="Logo Facebook">
-                <img src="images/ig.png" alt="Logo Instagram">
-                <img src="images/tiktok.png" alt="Logo TikTok">
-                <img src="images/wa.png" alt="Logo WhatsApp">
+                <img src="../../images/yt.png" alt="Logo YouTube">
+                <img src="../../images/tweet.png" alt="Logo Twitter">
+                <img src="../../images/fb.png" alt="Logo Facebook">
+                <img src="../../images/ig.png" alt="Logo Instagram">
+                <img src="../../images/tiktok.png" alt="Logo TikTok">
+                <img src="../../images/wa.png" alt="Logo WhatsApp">
             </div>
             <!-- Tambahkan gambar-gambar sosial media tambahan di sini -->
-                <img src="images/dw_app.png" alt="Extra Image 1" class="sosmed-extra-1">
-                <img src="images/dw_gugel.png" alt="Extra Image 2" class="sosmed-extra-2">
+                <img src="../../images/dw_app.png" alt="Extra Image 1" class="sosmed-extra-1">
+                <img src="../../images/dw_gugel.png" alt="Extra Image 2" class="sosmed-extra-2">
             <div class="text-footer">
             <p >Semua gambar dan materi dilindungi hak cipta dan merupakan milik PT Eka Bogainti. 
                 Penggunaan dan / atau duplikasi gambar dan materi ini tanpa izin adalah melanggar hukum.</p>
             </div>
 
-            <img src="images/frame_bawah.png" alt="backgorund footer" class="bg-footer">
+            <img src="../../images/frame_bawah.png" alt="backgorund footer" class="bg-footer">
         </section>
 
-    <script src="js/script.js"></script> <!-- Tautan ke file JavaScript -->
-</body>
+        
+
+    <script src="../../js/script.js"></script> <!-- Tautan ke file JavaScript -->
+    </body>
 </html>
