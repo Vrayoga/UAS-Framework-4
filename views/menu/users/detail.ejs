@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HokBen Kw</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/style.css"> <!-- Tautan ke file CSS -->
+    <style>
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Default: Three columns */
+            gap: 15px;
+            /* Space between items */
+            padding: 15px;
+            /* Container padding */
+            max-width: 1200px;
+            /* Maximum width of the container */
+            margin: 0 auto;
+            /* Center the container */
+        }
+
+        .btn-outline-hokben {
+            border-color: red;
+            color: red;
+            border-radius: 100cm;
+        }
+
+        .btn-outline-hokben:hover {
+            color: black;
+            border-color: red
+        }
+
+        .text-hokben-red {
+            color: #d91319;
+            text-decoration: solid;
+        }
+
+        .btn-yellow-hokben {
+            background: yellow;
+            border-radius: 35%;
+            font-weight: 500;
+        }
+
+        .container-detail {
+            max-width: 1000px;
+            /* Maximum width of the container */
+            margin: 0 auto;
+            /* Center the container */
+        }
+
+        .menu-button {
+            padding: 10px 20px;
+            border: 1px solid #b10e15;
+            border-radius: 35px;
+            text-align: center;
+            text-decoration: none;
+            color: #b10e15;
+            /* Original text color */
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Large screens: Five columns */
+        @media (min-width: 1200px) {
+            .menu-container {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        /* Medium screens: Four columns */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .menu-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Small screens: Three columns */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .menu-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Extra small screens: Two columns */
+        @media (max-width: 767px) {
+            .menu-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Very small screens: One column */
+        @media (max-width: 576px) {
+            .menu-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .icon {
+            font-size: 24px;
+            color: #d91319;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../../images/nav_login.png" alt="Gambar Atas" class="nav-image">
+
+    <button class="login-button">
+        <%= email %>
+    </button>
+
+    <button class="icon-button" style="margin-right: 90px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+            class="bi bi-person-fill login-icon" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+        </svg>
+    </button>
+
+    <header>
+        <nav>
+            <!-- Logo -->
+            <div class="logo">
+                <img src="../../images/HOKBEN.png" alt="Logo">
+            </div>
+
+            <!-- Menu -->
+            <ul class="menu">
+                <li><a href="/users" class="active">Beranda</a></li>
+                <li><a href="/menu/users">Menu</a></li>
+                <li><a href="#">Outlet</a></li>
+                <li><a href="#">Promo</a></li>
+                <li><a href="#">Perusahaan</a></li>
+                <li><a href="#">Berita</a></li>
+                <li><a href="#">Kontak Kami</a></li>
+            </ul>
+
+            <!-- Cart and Order Buttons -->
+            <div class="cart-and-order" style="margin-right: 50px;">
+                <button class="cart-btn">
+                    <i class="fas fa-cart-shopping cart-icon" style="margin-top: 4px; margin-right: 30px;"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="order-btn">Pesan Sekarang</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-detail">
+        <div class="row">
+            <div class="col-12 col-md-6 my-3 my-md-auto text-center">
+                <img class="img-fluid rounded mx-auto d-block" src="/images/menu/<%= data.gambar_menu %>"
+                    alt="PROMO BUNDLING 3 RAMEN" style="height: 350px; width: 350px;">
+            </div>
+            <div class="col-12 col-md-6 my-3 my-md-auto">
+                <h5 class="text-hokben-red text-center text-md-start">
+                    Rp. <%= data.harga_menu %> </h5>
+                <p class="small text-center text-md-start" style="color: grey">Composition :</p>
+                <p class="small text-center text-md-start"><%= data.komposisi_menu %> </p>
+                <div class="text-center text-md-start mt-3">
+                    <button class="btn btn-outline-hokben mr-2" onclick="window.history.back()">Back</button>
+                    <button class="pesan-button">+ Pesan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <section class="footer-section">
+        <div class="footer-content">
+            <div class="footer-links">
+                <p class="mt-3" style="font-weight: bold;">* Salad & Soup only for Dine In</p>
+                <h3 class="footer-title">TAUTAN</h3>
+                <div class="footer-links-group">
+                    <div class="footer-links-column">
+                        <p class="footer-text"><a href="#">Tentang Kami</a></p>
+                        <p class="footer-text"><a href="#">Kontak Kami</a></p>
+                        <p class="footer-text"><a href="#">Syarat dan Ketentuan</a></p>
+                    </div>
+                    <div class="footer-links-column-2">
+                        <p class="footer-text"><a href="#">Kebijakan Privasi</a></p>
+                        <p class="footer-text"><a href="#">Pelacak Pesanan</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-logo">
+            <img src="../../images/deliver.png" alt="Logo footer" class="gambar-footer">
+        </div>
+        <div class="footer-sosmed">
+            <p class="footer-text ikuti-kami">IKUTI KAMI</p>
+            <img src="../../images/yt.png" alt="Logo YouTube">
+            <img src="../../images/tweet.png" alt="Logo Twitter">
+            <img src="../../images/fb.png" alt="Logo Facebook">
+            <img src="../../images/ig.png" alt="Logo Instagram">
+            <img src="../../images/tiktok.png" alt="Logo TikTok">
+            <img src="../../images/wa.png" alt="Logo WhatsApp">
+        </div>
+        <img src="../../images/dw_app.png" alt="Extra Image 1" class="sosmed-extra-1">
+        <img src="../../images/dw_gugel.png" alt="Extra Image 2" class="sosmed-extra-2">
+        <div class="text-footer">
+            <p>Semua gambar dan materi dilindungi hak cipta dan merupakan milik PT Eka Bogainti.
+                Penggunaan dan / atau duplikasi gambar dan materi ini tanpa izin adalah melanggar hukum.</p>
+        </div>
+
+        <img src="../../images/frame_bawah.png" alt="background footer" class="bg-footer">
+    </section>
+
+    <script src="../../js/script.js"></script> <!-- Tautan ke file JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

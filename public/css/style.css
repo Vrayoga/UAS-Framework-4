@@ -577,45 +577,129 @@ nav {
     transform: translateX(-50%);
     font-weight: bold;
 }
+  /* Pilihan Menu */
+  /*---REKOMENDASI SECTION---*/
+  .Menu-section {
+    margin-top: 100px; /* Jarak antara section Menu dan section sebelumnya */
+  }
 
-.hokbenSearch {
-  color: white;
-    margin-left: auto;
-}
+  /*---Menu TITLE---*/
+  .Menu-title {
+    color: #d91319; /* Warna teks merah */
+    font-family: 'Varela Round', sans-serif; /* Font untuk judul */
+    font-weight: 900 !important; /* Teks sangat tebal */
+    text-align: center; /* Rata tengah */
+    margin-bottom: 20px; /* Jarak bawah judul */
+    font-size: 30px;
+  }
 
-/* Pilihan Menu */
-/*---REKOMENDASI SECTION---*/
-.Menu-section {
-  margin-top: 100px; /* Jarak antara section Menu dan section sebelumnya */
-}
-
-/*---Menu TITLE---*/
-.Menu-title {
-  color: #d91319; /* Warna teks merah */
-  font-family: 'Varela Round', sans-serif; /* Font untuk judul */
-  font-weight: 900 !important; /* Teks sangat tebal */
-  text-align: center; /* Rata tengah */
-  margin-bottom: 20px; /* Jarak bawah judul */
-  font-size: 30px;
-}
-
-/*---Menu CARDS CONTAINER---*/
+  /*---Menu CARDS CONTAINER---*/
 .Menu-cards {
   display: flex;
-  flex-wrap: wrap; /* Mengizinkan card untuk membungkus ke baris berikutnya */
-  justify-content: space-around; /* Spasi rata antara card */
-  gap: 20px; /* Jarak antar card */
+  flex-wrap: wrap; /* Allow cards to wrap to the next row */
+  justify-content: space-around; /* Space cards evenly */
+  gap: 20px; /* Space between cards */
   padding-left: 70px;
   padding-right: 70px;
 }
 
 /*---CARD---*/
 .card {
-  width: 25%; /* Lebar card */
-  border: 1px solid #ccc; /* Garis border abu-abu */
-  border-radius: 10px; /* Sudut border melengkung */
-  text-align: center; /* Teks rata tengah */
+  width: 25%; /* Card width */
+  border: 1px solid #ccc; /* Grey border */
+  border-radius: 10px; /* Rounded corners */
+  text-align: center; /* Center text */
   padding: 20px;
+  display: flex;
+  flex-direction: column; /* Arrange children in a column */
+  align-items: center; /* Center children horizontally */
+}
+
+/*---CARD IMAGE---*/
+.card img {
+  max-width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 10px; /* Space below image */
+}
+
+.keterangan {
+  width: 100%; /* Ensure text takes full width */
+}
+
+.details {
+  display: flex;
+  justify-content: space-between; /* Space out elements */
+  width: 100%; /* Full width for details */
+  align-items: center; /* Align vertically in the center */
+}
+
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.menu-button {
+  background-color: white;
+  border: 2px solid #b10e15;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: red;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-button.active,
+.menu-button{
+  background-color: #b10e15;
+  color: white;
+}
+
+.menu-button:focus {
+  outline: none;
+}
+/*---Menu CARDS CONTAINER---*/
+.Menu-cards {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next row */
+  justify-content: space-around; /* Space cards evenly */
+  gap: 20px; /* Space between cards */
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+/*---CARD---*/
+.card {
+  width: 25%; /* Card width */
+  border: 1px solid #ccc; /* Grey border */
+  border-radius: 10px; /* Rounded corners */
+  text-align: center; /* Center text */
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Arrange children in a column */
+  align-items: center; /* Center children horizontally */
+}
+
+/*---CARD IMAGE---*/
+.card img {
+  max-width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 10px; /* Space below image */
+}
+
+.keterangan {
+  width: 100%; /* Ensure text takes full width */
+}
+
+.details {
+  display: flex;
+  justify-content: space-between; /* Space out elements */
+  width: 100%; /* Full width for details */
+  align-items: center; /* Align vertically in the center */
 }
 
 .menu-container {
@@ -636,14 +720,3 @@ nav {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.menu-button.active,
-.menu-button:hover {
-  background-color: red;
-  color: white;
-}
-
-.menu-button:focus {
-  outline: none;
-}
-
-/* */

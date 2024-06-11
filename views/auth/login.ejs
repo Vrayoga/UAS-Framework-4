@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
+  <title>HokBen KW</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     /* Custom CSS for header */
     .hokben-header {
-      background-color: #f6ad49;
+      background-size: cover;
+      color: #4a4a4a; /* Set header text color to grey */
+      padding: 20px 0; /* Increase padding for more space */
     }
 
     .hokben-logo {
@@ -20,11 +22,14 @@
       list-style-type: none;
       padding: 0;
       margin: 0;
+      display: flex;
+      justify-content: center; /* Center the navigation links */
+      align-items: center; /* Center the items vertically */
     }
 
     .hokben-nav li {
       display: inline-block;
-      margin-right: 20px;
+      margin-right: 30px; /* Increase margin for more space */
     }
 
     .hokben-nav li:last-child {
@@ -32,7 +37,7 @@
     }
 
     .hokben-nav a {
-      color: #ffffff;
+      color: #4a4a4a; /* Set link color to grey */
       text-decoration: none;
       font-weight: bold;
     }
@@ -41,65 +46,128 @@
       text-decoration: underline;
     }
 
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-right a {
+      color: #4a4a4a; /* Set link color to grey */
+      text-decoration: none;
+      margin-left: 30px; /* Increase margin for more space */
+    }
+
+    .header-right a:hover {
+      text-decoration: underline;
+    }
+
     /* Additional styles for header */
     header {
       margin-top: 20px; /* Space from top */
     }
+
+    /* Custom CSS for login form */
+    .login-form {
+      background-color: #ffffff;
+      border: 2px solid #f6ad49;
+    }
+
+    .login-form h2 {
+      color: #f6ad49;
+    }
+
+    .login-form button {
+      background-color: #f6ad49;
+    }
+
+    .login-form button:hover {
+      background-color: #e99a35;
+    }
+
+    .login-form a {
+      color: #f6ad49;
+    }
+
+    .login-form a:hover {
+      color: #e99a35;
+    }
+
+    footer {
+      background-color: #ffffff;
+    }
+
+    /* Custom CSS to resize the image */
+    .login-image {
+      max-width: 300px; /* Set the maximum width of the image */
+      margin: auto; /* Center the image vertically */
+    }
+
+    .nav-image {
+      width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 
-<!-- Header -->
-<header class="w-full bg-white-900 text-black text-center">
-  <div class="container mx-auto flex justify-between items-center">
-    <img src="https://www.hokben.co.id/assets/img/logo_hokben_1.png" alt="HokBen Logo" class="hokben-logo">
-    <nav>
-      <ul class="hokben-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Menu</a></li>
-        <li><a href="#">Locations</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<body class="bg-zinc-100 flex flex-col items-center justify-center min-h-screen">
+  <img src="../../images/nav_login.png" alt="Gambar Atas" class="nav-image">
 
-<body class="bg-zinc-100 flex flex-col items-center justify-center h-screen">
-  <div class="flex-1 flex items-center justify-center">
-    <form action="/log" method="POST" class="bg-white shadow-lg rounded-lg overflow-hidden max-w-3xl flex">
-      <div class="w-1/2">
-        <img src="https://source.unsplash.com/600x800/?food" alt="Food" class="w-full h-full object-cover" />
+  <!-- Header -->
+  <header class="hokben-header w-full text-center py-4">
+    <div class="container mx-auto flex items-center justify-between px-4">
+      <nav class="flex items-center mx-auto">
+        <img src="../../images/HOKBEN.png" alt="HokBen Logo" class="hokben-logo mr-4">
+        <ul class="hokben-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Locations</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <a href="#">Login</a>
+        <a href="#">ID</a>
+        <a href="#">EN</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="flex-1 flex items-center justify-center mt-8">
+    <form action="/log" method="POST" class="login-form shadow-lg rounded-lg overflow-hidden max-w-3xl flex">
+      <div class="w-1/2 flex items-center justify-center">
+        <img src="../../images/lglog.jpeg" alt="Food" class="login-image" />
       </div>
       <div class="w-1/2 p-8 pb-16">
         <h2 class="text-2xl font-semibold text-center">Welcome</h2>
-        <p class="text-zinc-600 mt-2">
+        <p class="text-zinc-600 mt-2 text-center">
           Please input your email address.
         </p>
-          <div class="mt-4">
-            <label for="username" class="block text-zinc-700">Username</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Masukkan Email Anda"
-              class="mt-1 p-2 w-full border rounded-md"
-            />
+        <div class="mt-4">
+          <label for="email" class="block text-zinc-700">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Masukkan Email Anda"
+            class="mt-1 p-2 w-full border rounded-md"
+          />
+        </div>
+        <div class="mt-4">
+          <label for="password" class="block text-zinc-700">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Masukkan Password Anda"
+            class="mt-1 p-2 w-full border rounded-md"
+          />
+        </div>
+        <div class="flex justify-between items-center mt-4">
+          <div>
+            <input type="checkbox" id="remember" name="remember" />
+            <label for="remember" class="text-sm text-zinc-600">Remember me</label>
           </div>
-          <div class="mt-4">
-            <label for="password" class="block text-zinc-700">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Masukkan Password Anda"
-              class="mt-1 p-2 w-full border rounded-md"
-            />
-          </div>
-          <div class="flex justify-between items-center mt-4">
-            <div>
-              <input type="checkbox" id="remember" name="remember" />
-              <label for="remember" class="text-sm text-zinc-600">Remember me</label>
-            </div>
         </div>
         <br>
         <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
@@ -116,8 +184,9 @@
       </div>
     </form>
   </div>
+
   <!-- Footer -->
-  <footer class="bg-white-900 text-white text-center w-full mt-5">
+  <footer class="text-white text-center w-full py-4">
     <img src="https://www.hokben.co.id/assets/img/group_539.png" alt="Footer Image" class="h-35 mx-auto" />
   </footer>
 </body>
