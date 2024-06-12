@@ -1,11 +1,11 @@
 const connection = require('../config/database');
 
-class Model_Outlet {
+class Model_Contact {
 
-    static async getAll() {
+    static async getAll(){
         return new Promise((resolve, reject) => {
-            connection.query('SELECT * FROM outlet ORDER BY id_outlet DESC', (err, rows) => {
-                if (err) {
+            connection.query('select * from contact order by id_contact desc', (err, rows) => {
+                if(err){
                     reject(err);
                 } else {
                     resolve(rows);
@@ -14,10 +14,10 @@ class Model_Outlet {
         });
     }
 
-    static async Store(Data) {
+    static async Store(Data){
         return new Promise((resolve, reject) => {
-            connection.query('INSERT INTO outlet SET ?', Data, (err, result) => {
-                if (err) {
+            connection.query('INSERT INTO contact SET ?', Data, function(err, result){
+                if(err){
                     reject(err);
                 } else {
                     resolve(result);
@@ -26,42 +26,44 @@ class Model_Outlet {
         });
     }
 
-    static async getId(id) {
+    static async getId(id){
         return new Promise((resolve, reject) => {
-            connection.query('SELECT * FROM outlet WHERE id_outlet = ?', [id], (err, rows) => {
-                if (err) {
+            connection.query('select * from contact where id_contact = ' + id, (err,rows) => {
+                if(err) {
                     reject(err);
                 } else {
                     resolve(rows);
                 }
-            });
-        });
+            })
+        })
     }
 
     static async Update(id, Data) {
         return new Promise((resolve, reject) => {
-            connection.query('UPDATE outlet SET ? WHERE id_outlet = ?', [Data, id], (err, result) => {
-                if (err) {
+            connection.query('update contact set ? where id_contact' + id, Data, function(err, result){
+                if(err){
                     reject(err);
                     console.log(err);
                 } else {
                     resolve(result);
                 }
-            });
+            })
         });
     }
 
     static async Delete(id) {
         return new Promise((resolve, reject) => {
-            connection.query('DELETE FROM outlet WHERE id_outlet = ?', [id], (err, result) => {
-                if (err) {
+            connection.query('delete from contact where id_contact =' + id, function(err,result){
+                if(err) {
                     reject(err);
                 } else {
                     resolve(result);
                 }
-            });
+            })
         });
     }
+
 }
 
-module.exports = Model_Outlet;
+
+module.exports = Model_Contact;

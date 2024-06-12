@@ -22,6 +22,7 @@ router.get('/login', function(req, res, next) {
   res.render('auth/login');
 });
 
+
 router.post('/saveusers', async(req, res) => {
   let { Nama, Email, Password, No_telp, Alamat } = req.body;
   let enkripsi = await bcrypt.hash(Password, 10);

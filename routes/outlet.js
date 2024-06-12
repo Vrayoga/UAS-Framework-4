@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Model_outlet = require('../model/model_outlet.js');
+const Model_Users = require('../model/Model_Users.js');
 
 router.get('/', async (req, res, next) => {
     try {
@@ -76,18 +77,21 @@ router.get('/delete/:id', async (req, res, next) => {
 });
 
 router.get('/users', async function (req, res, next) {
-    try{
+    try {
         // let level_users = req.session.level;
-        // let id = req.session.userId;
-        // let Data = await Model_Users.getId(id);
+        let id = req.session.userId;
+        let Data = await Model_Users.getId(id);
         let rows = await Model_outlet.getAll();
         res.render('outlet/users/index', {
             data: rows,
+            email: Data[0].email
         })
-        } catch {
-            req.flash('invalid', 'Anda harus login');
-            res.redirect('/login')
-        }
-    });
+    } catch (error) {
+        console.error("Error:", error);
+        req.flash('invalid', 'Terjadi kesalahan saat memuat data pengguna');
+        res.redirect('/login');
+    }
+
+});
 
 module.exports = router;

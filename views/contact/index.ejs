@@ -1,0 +1,68 @@
+<%- include('../partials_admin/__head.ejs') %>
+
+    <body>
+        <%- include('../partials_admin/__navbar.ejs') %>
+            <main id="main" class="main">
+
+                <div class="pagetitle">
+                    <h1>Menu</h1>
+                    <nav>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/superusers">Home</a></li>
+                            <li class="breadcrumb-item active">Data contact us</li>
+                        </ol>
+                    </nav>
+                </div>
+                <section class="section dashboard">
+                <div class="container">
+                    <div class="row">
+                        <%- include('../partials_admin/__messagess.ejs') %>
+                        <div class="col">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Nama</th>
+                                        <th scope="col">handphone</th>
+                                        <th scope="col">email</th>
+                                        <th scope="col">kategori</th>
+                                        <th scope="col">deskripsi</th>
+                                        <th colspan="2" scope="col">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(var i=0; i < dataContact.length; i++){ %>
+                                        <tr>
+                                            <th scope="row">
+                                                <%= (i+1) %>
+                                            </th>
+                                            <td>
+                                                <%= dataContact[i].nama %>
+                                            </td>
+                                            <td>
+                                                <%= dataContact[i].handphone %>
+                                            </td>
+                                            <td>
+                                                <%= dataContact[i].email %>
+                                            </td>
+                                            <td>
+                                                <%= dataContact[i].kategori %>
+                                            </td>
+                                            <td>
+                                                <%= dataContact[i].deskripsi %>
+                                            </td>
+                                            <td>
+                                                <a href="/contact/delete/<%= dataContact[i].id_contact %>"
+                                                    class="btn btn-sm btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+            </main><!-- End #main -->
+
+            <%- include('../partials_admin/__footer.ejs') %>

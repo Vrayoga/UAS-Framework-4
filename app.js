@@ -13,6 +13,7 @@ var superusersRouter = require('./routes/superusers');
 var kategoriRouter = require('./routes/kategori');
 var menuRouter = require('./routes/menu');
 var outletRouter = require('./routes/outlet');
+var contactRouter = require('./routes/contact');
 
 var app = express();
 
@@ -47,6 +48,9 @@ app.use('/superusers', superusersRouter);
 app.use('/kategori', kategoriRouter);
 app.use('/menu', menuRouter);
 app.use('/outlet', outletRouter);
+app.use('/contact', contactRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
