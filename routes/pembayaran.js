@@ -62,7 +62,7 @@ router.post('/update/(:id)', async function (req, res, next) {
     } = req.body;
     let Data = {
         id_service,
-        status_pembayaran: "selesai",
+        status_pembayaran: "done",
     }
     await Model_Pembayaran.Update(id, Data);
     console.log(Data);
@@ -70,7 +70,7 @@ router.post('/update/(:id)', async function (req, res, next) {
     res.redirect('/menu/users')
     } catch {
         req.flash('error', 'terjadi kesalahan pada fungsi');
-        res.redirect('/menu');
+        res.redirect('/menu/users');
     }
 })
 
