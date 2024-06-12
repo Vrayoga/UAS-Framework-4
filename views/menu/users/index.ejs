@@ -5,209 +5,462 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/style.css"> <!-- Tautan ke file CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/style.css"> <!-- Tautan ke file CSS -->
 </head>
 <style>
-.menu-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Default: Three columns */
-    gap: 15px; /* Space between items */
-    padding: 15px; /* Container padding */
-    max-width: 1200px; /* Maximum width of the container */
-    margin: 0 auto; /* Center the container */
-}
-
-.menu-button {
-    padding: 10px 20px;
-    border: 1px solid #b10e15;
-    border-radius: 35px;
-    text-align: center;
-    text-decoration: none;
-    color: #b10e15; /* Original text color */
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-
-/* Large screens: Five columns */
-@media (min-width: 1200px) {
     .menu-container {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
-
-/* Medium screens: Four columns */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .menu-container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-/* Small screens: Three columns */
-@media (min-width: 768px) and (max-width: 991px) {
-    .menu-container {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
+        /* Default: Three columns */
+        gap: 15px;
+        /* Space between items */
+        padding: 15px;
+        /* Container padding */
+        max-width: 1200px;
+        /* Maximum width of the container */
+        margin: 0 auto;
+        /* Center the container */
     }
-}
 
-/* Extra small screens: Two columns */
-@media (max-width: 767px) {
     .menu-container {
-        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        gap: 15px;
+        /* Space between items */
+        padding: 15px;
+        /* Container padding */
+        max-width: 1200px;
+        /* Maximum width of the container */
+        margin: 0 auto;
+        /* Center the container */
     }
-}
 
-/* Very small screens: One column */
-@media (max-width: 576px) {
-    .menu-container {
-        grid-template-columns: 1fr;
+    .Menu-cards {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-left: 10%;
+        margin-right: 10%;
+        gap: 70px;
     }
-}
 
-.icon {
-    font-size: 24px;
-    color: #d91319;
-}
+    .card {
+        margin: 10px;
+        /* Add margin between cards */
+        /* Ensure the card doesn't exceed half of the container width */
+        max-width: calc(50% - 20px);
+        /* Ensure the card doesn't exceed half of the container width */
+        box-sizing: border-box;
+        /* Include padding and border in the width */
+        display: flex;
+        flex-direction: column;
+        /* Stack child elements vertically */
+    }
 
-        </style>
+    @media (max-width: 1268px) {
+        .card {
+            flex: 0 0 calc(60% - 20px);
+            /* Full width on smaller screens */
+            max-width: calc(45% - 20px);
+            /* Ensure full width on smaller screens */
+        }
+    }
 
-        <img src="../../images/nav_login.png" alt="Gambar Atas" class="nav-image">
+    @media (max-width: 1068px) {
+        .card {
+            flex: 0 0 calc(100% - 20px);
+            /* Full width on smaller screens */
+            max-width: calc(100% - 20px);
+            /* Ensure full width on smaller screens */
+            margin-top: 30px;
+        }
+    }
 
-            <button class="login-button">
-                <%= email %>
+    @media (max-width: 1023px) {
+        .modal-dialog {
+            max-width: 90%;
+            /* Atur lebar modal menjadi 90% saat lebar layar 1023px atau kurang */
+        }
+    }
+
+
+    .menu-button {
+        padding: 10px 20px;
+        border: 1px solid #b10e15;
+        border-radius: 35px;
+        text-align: center;
+        text-decoration: none;
+        color: #b10e15;
+        /* Original text color */
+        font-size: 1em;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .quantity-container {
+        display: flex;
+        align-items: center;
+        /* Align items vertically */
+    }
+
+    .minus-btn,
+    .plus-btn {
+        flex: 0 0 auto;
+        /* Prevent buttons from stretching */
+        margin: 0 5px;
+        /* Add margin between buttons and input */
+    }
+
+
+    @media (max-width: 576px) {
+        .modal-lg {
+            max-width: 100%;
+        }
+    }
+
+
+    /* Large screens: Five columns */
+    @media (min-width: 1200px) {
+        .menu-container {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+
+    /* Medium screens: Four columns */
+    @media (min-width: 992px) and (max-width: 1199px) {
+        .menu-container {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    /* Small screens: Three columns */
+    @media (min-width: 768px) and (max-width: 991px) {
+        .menu-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    /* Extra small screens: Two columns */
+    @media (max-width: 767px) {
+        .menu-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* Very small screens: One column */
+    @media (max-width: 576px) {
+        .menu-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .icon {
+        font-size: 24px;
+        color: #d91319;
+    }
+</style>
+
+<img src="../../../images/nav_login.png" alt="Gambar Atas" class="nav-image">
+
+<button class="login-button">
+    <%= email %>
+</button>
+
+<button class="icon-button" style="margin-right: 90px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+        class="bi bi-person-fill login-icon" viewBox="0 0 16 16">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+    </svg>
+</button>
+
+<header>
+    <nav>
+        <!-- Logo -->
+        <div class="logo">
+            <img src="../../../images/HOKBEN.png" alt="Logo">
+        </div>
+
+        <!-- Menu -->
+        <ul class="menu">
+            <li><a href="/users" class="active">Beranda</a></li>
+
+            <li><a href="/menu/users">Menu</a></li>
+            <li><a href="#">Outlet</a></li>
+            <li><a href="#">Promo</a></li>
+            <li><a href="#">Perusahaan</a></li>
+            <li><a href="#">Berita</a></li>
+            <li><a href="#">Kontak Kami</a></li>
+        </ul>
+
+        <!-- Cart and Order Buttons -->
+        <div class="cart-and-order" style="margin-right: 50px;">
+            <button class="cart-btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                <i class="fas fa-cart-shopping cart-icon" style="margin-top: 4px; margin-right: 30px;"></i>
+                <span class="cart-count">0</span>
             </button>
+            <button class="order-btn">Pesan Sekarang</button>
+        </div>
+    </nav>
+</header>
 
-        <button class="icon-button" style="margin-right: 90px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-fill login-icon" viewBox="0 0 16 16">
-                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-            </svg>
-        </button>
 
-        <header>
-            <nav>
-                <!-- Logo -->
-                <div class="logo">
-                    <img src="../../images/HOKBEN.png" alt="Logo">
+<!-- Informasi Section -->
+<section class="sectionMenu">
+    <div class="letakMenu">
+        <!-- Tiga Elemen dalam Satu Baris -->
+        <h1 class="hokbenMenu">
+            Menu | メニュー
+        </h1>
+    </div>
+    </div>
+</section>
+
+<!-- Rekomendasi Section -->
+<section class="Menu-section">
+    <div class="menu-container">
+        <% for(var i=0; i < data_kategori.length; i++) { %>
+        <a href="/menu/users/kategori/<%= data_kategori[i].id_kategori %>" class="menu-button"><%= data_kategori[i].nama_kategori %></a>
+        <% } %>
+    </div>
+    <div class="Menu-cards">
+        <% for(var i=0; i < data.length; i++) { %>
+        <div class="card">
+            <img src="/images/menu/<%= data[i].gambar_menu %>" height="250px" width="300px" alt="Product Image"
+                class="card-image">
+            <div class="keterangan">
+                <p><strong><%= data[i].nama_menu %></strong></p>
+                <p><%= data[i].harga_menu %></p>
+                <p style="display: none;"><%= data[i].komposisi_menu %></p>
+                <div class="details">
+                    <a href="/menu/users/<%= data[i].id_menu %>"
+                        style="color: #d91319; text-decoration: underline;">Detail</a>
+                    <button type="button" class="pesan-button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        data-id-menu="<%= data[i].id_menu %>" data-id-users="<%= id_users %>">+ Pesan</button>
                 </div>
-        
-                <!-- Menu -->
-                <ul class="menu">
-                    <li><a href="/users" class="active">Beranda</a></li>
-
-                    <li><a href="/menu/users">Menu</a></li>
-                    <li><a href="/outlet/users">Outlet</a></li>
-                    <li><a href="#">Promo</a></li>
-                    <li><a href="#">Perusahaan</a></li>
-                    <li><a href="#">Berita</a></li>
-                    <li><a href="/contact/users">Kontak Kami</a></li>
-                </ul>
-        
-                <!-- Cart and Order Buttons -->
-                <div class="cart-and-order" style="margin-right: 50px;">
-                    <button class="cart-btn">
-                        <i class="fas fa-cart-shopping cart-icon" style="margin-top: 4px; margin-right: 30px;"></i>
-                        <span class="cart-count">0</span>
-                    </button>
-                    <button class="order-btn">Pesan Sekarang</button>
-                </div>
-            </nav>
-        </header>
-
-
-    <!-- Informasi Section -->
-    <section class="sectionMenu">
-        <div class="letakMenu">
-            <!-- Tiga Elemen dalam Satu Baris -->
-            <h1 class="hokbenMenu">
-                Menu | メニュー
-            </h1>
+            </div>
         </div>
-        </div>
-    </section>
+        <% } %>
+    </div>
 
-    <!-- Rekomendasi Section -->
-    <section class="Menu-section">
-        <div class="menu-container">
-            <a href="/menu/users" class="menu-button active">Hoka Ramen</a>
-            <a href="#" class="menu-button">Set Menu</a>
-            <a href="#" class="menu-button">Main Menu</a>
-            <a href="#" class="menu-button">HokBen Fried Chicken</a>
-            <a href="#" class="menu-button">Fried Menu</a>
-            <a href="#" class="menu-button">Soup & Sukiyaki</a>
-            <a href="#" class="menu-button">Desserts</a>
-            <a href="#" class="menu-button">Snacks</a>
-            <a href="#" class="menu-button">Beverages</a>
-            <a href="#" class="menu-button">Side Dish</a>
-            <a href="#" class="menu-button">Take Away Bag</a>
-        </div>
-        <div class="Menu-cards">
-            <% for(var i=0; i < data.length; i++) { %>
-                <div class="card">
-                    <img src="/images/menu/<%= data[i].gambar_menu %>" alt="Product 1" class="card-image">
-                    <div class="keterangan">
-                        <p><strong>
-                                <%= data[i].nama_menu %>
-                            </strong></p>
-                        <p>
-                            <%= data[i].harga_menu %>
-                        </p>
-                        <div class="details">
-                            <a  href="/menu/users/<%= data[i].id_menu %>" style="color: #d91319; text-decoration: underline;">Detail</a>
-                            <button class="pesan-button">+ Pesan</button>
+</section>
+<!-- Informasi Section -->
+
+
+<!-- Modal section Order-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form id="orderForm" action="/pembayaran/store" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-12 col-md-6 my-3 my-md-auto text-center">
+                            <img class="img-fluid rounded mx-auto d-block" src="" id="modal-image" alt="Menu Image" style="height: 350px; width: 400px;">
+                        </div>
+                        <div class="col-12 col-md-6 my-3 my-md-auto">
+                            <h5 class="text-hokben-red text-center text-md-start" id="modal-price" style="color: red"></h5>
+                            <p class="small text-center text-md-start" style="color: grey">Composition :</p>
+                            <p class="small text-center text-md-start" id="modal-composition"></p>
+                            <div class="quantity-container text-center text-md-start mt-3">
+                                <button class="btn btn-outline-secondary quantity-btn minus-btn">-</button>
+                                <input type="number" id="quantity-input" name="jumlah" class="form-control quantity-input" value="1">
+                                <button class="btn btn-outline-secondary quantity-btn plus-btn">+</button>
+                            </div>
+                            <input type="hidden" id="modal-menu-id" name="id_menu">
+                            <input type="hidden" id="modal-user-id" name="id_users">
+                            <div class="text-center text-md-start mt-3">
+                                <button class="btn btn-outline-hokben mr-2" data-bs-dismiss="modal">Back</button>
+                                <button type="submit" class="btn btn-primary">+ Pesan</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal section Checkout-->
+<div class="modal fade" id="exampleModal2" tabindex="-2" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <% if (data_pembayaran.length > 0) { %>
+                    <h2 class="fw-bold mb-3">Cart <%= data_pembayaran[0].nama_menu %></h2>
+                    <% for(var i=0; i < data_pembayaran.length; i++) { %>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <div class="list-order">
+                                <img src="/images/menu/<%= data_pembayaran[i].gambar_menu %>" height="80px" width="100px"
+                                    alt="Product Image">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <p><strong><%= data_pembayaran[i].nama_menu %></strong></p>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="quantity-container text-center text-md-start mt-3">
+                                <button class="btn btn-outline-secondary quantity-btn minus-btn">-</button>
+                                <input type="number" name="jumlah" class="form-control quantity-input"
+                                    value="<%= data_pembayaran[i].jumlah %>">
+                                <button class="btn btn-outline-secondary quantity-btn plus-btn">+</button>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <p>Rp. <%= data_pembayaran[i].harga_menu %></p>
+                        </div>
+                        <div class="col-12 text-center mt-2">
+                            <a href="/pembayaran/delete/<%= data_pembayaran[i].id_pembayaran %>"
+                                class="btn btn-sm btn-danger">Delete</a>
+                        </div>
+                    </div>
+                    <% } %>
+                <% } else { %>
+                    <p>Cart is empty.</p>
                 <% } %>
             </div>
-        </section>
-        <!-- Informasi Section -->
-        
-        
-        <!-- Footer Section -->
-        <section class="footer-section">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <h3 class="footer-title">TAUTAN</h3>
-                    <div class="footer-links-group">
-                        <div class="footer-links-column">
-                            <p class="footer-text"><a href="#">Tentang Kami</a></p>
-                            <p class="footer-text"><a href="#">Kontak Kami</a></p>
-                            <p class="footer-text"><a href="#">Syarat dan Ketentuan</a></p>
-                        </div>
-                        <div class="footer-links-column-2">
-                            <p class="footer-text"><a href="#">Kebijakan Privasi</a></p>
-                            <p class="footer-text"><a href="#">Pelacak Pesanan</a></p>
-                        </div>
-                    </div>
+            <div class="d-flex justify-content-end mt-4 mr-4 gap-3">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                <% if (data_pembayaran.length > 0) { %>
+                    <a href="/pembayaran/checkout/<%= id_users %>" class="btn btn-sm btn-warning">Checkout</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Footer Section -->
+<section class="footer-section">
+    <div class="footer-content">
+        <div class="footer-links">
+            <h3 class="footer-title">TAUTAN</h3>
+            <div class="footer-links-group">
+                <div class="footer-links-column">
+                    <p class="footer-text"><a href="#">Tentang Kami</a></p>
+                    <p class="footer-text"><a href="#">Kontak Kami</a></p>
+                    <p class="footer-text"><a href="#">Syarat dan Ketentuan</a></p>
+                </div>
+                <div class="footer-links-column-2">
+                    <p class="footer-text"><a href="#">Kebijakan Privasi</a></p>
+                    <p class="footer-text"><a href="#">Pelacak Pesanan</a></p>
                 </div>
             </div>
         </div>
-        <div class="footer-logo">
-            <img src="../../images/deliver.png" alt="Logo footer" class="gambar-footer">
-        </div>
-        <div class="footer-sosmed">
-            <p class="footer-text ikuti-kami">IKUTI KAMI</p>
-            <img src="../../images/yt.png" alt="Logo YouTube">
-            <img src="../../images/tweet.png" alt="Logo Twitter">
-            <img src="../../images/fb.png" alt="Logo Facebook">
-            <img src="../../images/ig.png" alt="Logo Instagram">
-            <img src="../../images/tiktok.png" alt="Logo TikTok">
-            <img src="../../images/wa.png" alt="Logo WhatsApp">
-        </div>
-        <!-- Tambahkan gambar-gambar sosial media tambahan di sini -->
-        <img src="../../images/dw_app.png" alt="Extra Image 1" class="sosmed-extra-1">
-        <img src="../../images/dw_gugel.png" alt="Extra Image 2" class="sosmed-extra-2">
-        <div class="text-footer">
-            <p>Semua gambar dan materi dilindungi hak cipta dan merupakan milik PT Eka Bogainti.
-                Penggunaan dan / atau duplikasi gambar dan materi ini tanpa izin adalah melanggar hukum.</p>
-        </div>
+    </div>
+    </div>
+    <div class="footer-logo">
+        <img src="../../../images/deliver.png" alt="Logo footer" class="gambar-footer">
+    </div>
+    <div class="footer-sosmed">
+        <p class="footer-text ikuti-kami">IKUTI KAMI</p>
+        <img src="../../../images/yt.png" alt="Logo YouTube">
+        <img src="../../../images/tweet.png" alt="Logo Twitter">
+        <img src="../../../images/fb.png" alt="Logo Facebook">
+        <img src="../../../images/ig.png" alt="Logo Instagram">
+        <img src="../../../images/tiktok.png" alt="Logo TikTok">
+        <img src="../../../images/wa.png" alt="Logo WhatsApp">
+    </div>
+    <!-- Tambahkan gambar-gambar sosial media tambahan di sini -->
+    <img src="../../../images/dw_app.png" alt="Extra Image 1" class="sosmed-extra-1">
+    <img src="../../../images/dw_gugel.png" alt="Extra Image 2" class="sosmed-extra-2">
+    <div class="text-footer">
+        <p>Semua gambar dan materi dilindungi hak cipta dan merupakan milik PT Eka Bogainti.
+            Penggunaan dan / atau duplikasi gambar dan materi ini tanpa izin adalah melanggar hukum.</p>
+    </div>
 
-        <img src="../../images/frame_bawah.png" alt="backgorund footer" class="bg-footer">
-    </section>
+    <img src="../../../images/frame_bawah.png" alt="backgorund footer" class="bg-footer">
+</section>
 
 
-
-    <script src="../../js/script.js"></script> <!-- Tautan ke file JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+</script>
+<script src="../../js/script.js"></script> <!-- Tautan ke file JavaScript -->
 </body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var quantityInput = document.getElementById('quantity-input');
+    var modalMenuIdInput = document.getElementById('modal-menu-id');
+    var modalUserIdInput = document.getElementById('modal-user-id');
+    var minusButton = document.querySelector('.minus-btn');
+    var plusButton = document.querySelector('.plus-btn');
+
+    minusButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (quantityInput.value > 1) {
+            quantityInput.value = parseInt(quantityInput.value) - 1;
+        }
+    });
+
+    plusButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        quantityInput.value = parseInt(quantityInput.value) + 1;
+    });
+
+    document.getElementById('orderForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var jumlah = quantityInput.value;
+        var id_menu = modalMenuIdInput.value;
+        var id_users = modalUserIdInput.value;
+
+        var data = {
+            jumlah: jumlah,
+            id_menu: id_menu,
+            id_users: id_users
+        };
+
+        fetch('/pembayaran/store', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = '/menu/users';
+                console.log(response)
+            } else {
+                console.error('Terjadi kesalahan dalam pemrosesan pesanan.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+
+    var modalImage = document.getElementById('modal-image');
+    var modalPrice = document.getElementById('modal-price');
+    var modalComposition = document.getElementById('modal-composition');
+
+    document.querySelectorAll('.pesan-button').forEach(function (button) {
+        button.addEventListener('click', function (event) {
+            var id_menu = button.dataset.idMenu;
+            var id_users = button.dataset.idUsers;
+
+            var card = button.closest('.card');
+            var imageSrc = card.querySelector('.card-image').src;
+            var price = card.querySelector('.keterangan p:nth-child(2)').innerText;
+            var composition = card.querySelector('.keterangan p:nth-child(3)').innerText;
+
+            modalImage.src = imageSrc;
+            modalPrice.innerText = 'Rp. ' + price;
+            modalComposition.innerText = composition;
+
+            modalMenuIdInput.value = id_menu;
+            modalUserIdInput.value = id_users;
+        });
+    });
+});
+
+</script>
+
+
+
+
 
 </html>

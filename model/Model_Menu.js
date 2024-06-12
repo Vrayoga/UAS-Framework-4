@@ -29,7 +29,8 @@ class Model_Menu {
         });
     }
 
-    static async getId(id){
+    static async getbyId(id){
+        console.log('ID passed to getId:', id);
         return new Promise((resolve, reject) => {
             connection.query(`select *, b.nama_kategori from menu as a
             join kategori as b on b.id_kategori=a.id_kategori
@@ -38,6 +39,7 @@ class Model_Menu {
                     reject(err);
                 } else {
                     resolve(rows);
+                    console.log(id);
                 }
             })
         })
@@ -69,6 +71,18 @@ class Model_Menu {
         });
     }
 
+    static async getId(id_kategori){
+        return new Promise((resolve, reject) => {
+            connection.query('SELECT * FROM menu WHERE id_kategori = ?', [id_kategori], function(error, results) {
+                if (error) {
+                    return reject(error);
+                }
+                resolve(results);
+            });
+        })
+    }
+
+   
 }
 
 

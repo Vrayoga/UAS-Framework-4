@@ -9,6 +9,7 @@ class Model_Kategori {
                     reject(err);
                 } else {
                     resolve(rows);
+                    console.log(rows);
                 }
             });
         });

@@ -6,7 +6,8 @@ const multer = require('multer');
 const path = require('path');
 const Model_Menu = require('../model/Model_Menu.js');
 const Model_Users = require('../model/Model_Users.js')
-const Model_Kategori = require('../model/Model_Kategori.js')
+const Model_Kategori = require('../model/Model_Kategori.js');
+const Model_Pembayaran = require('../model/Model_Pembayaran.js');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -181,13 +182,19 @@ router.get('/users', async function (req, res, next) {
         let id = req.session.userId;
         let Data = await Model_Users.getId(id);
         let rows = await Model_Menu.getAll();
+        let bayar = await Model_Pembayaran.getId(id);
+        let kategori = await Model_Kategori.getAll();
         res.render('menu/users/index', {
             data: rows,
-            email: Data[0].email
+            email: Data[0].email,
+            id_users: req.session.userId,
+            data_pembayaran: bayar,
+            data_kategori: kategori
         })
+        console.log(bayar);
     } catch {
         req.flash('invalid', 'Anda harus login');
-        res.redirect('/login')
+        // res.redirect('/login')
     }
 });
 
@@ -196,12 +203,13 @@ router.get('/users/(:id)', async function (req, res, next) {
         // let level_users = req.session.level;
         let id = req.params.id;
         let id_users = req.session.userId;
-        let rows = await Model_Menu.getId(id);
+        let rows = await Model_Menu.getbyId(id);
         let Data = await Model_Users.getId(id_users);
         if (Data[0].level_users == "1") {
             res.render('menu/users/detail', {
                 data: rows[0],
-                email: Data[0].email
+                email: Data[0].email,
+                id_users: req.session.userId
             })
         }
     } catch {
@@ -209,5 +217,28 @@ router.get('/users/(:id)', async function (req, res, next) {
         // res.redirect('/login')
     }
 })
+
+router.get('/users/kategori/:id_kategori', async function(req, res, next) {
+    try {
+        let id = req.session.userId;
+        let id_kategori = req.params.id_kategori;
+        let id_users = req.session.userId;
+        let data = await Model_Menu.getId(id_kategori);
+        let data_kategori = await Model_Kategori.getAll(); // Assuming you have a method to get all categories
+        let Data = await Model_Users.getId(id_users);
+        let bayar = await Model_Pembayaran.getId(id);
+        res.render('menu/users', {
+            data: data,
+            data_kategori: data_kategori,
+            id_users: req.session.userId, // Assuming you store user id in session
+            email: Data[0].email,
+            data_pembayaran: bayar,
+        });
+        
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
+    }
+});
 
 module.exports = router;
