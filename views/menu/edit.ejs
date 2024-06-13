@@ -47,6 +47,24 @@
                         </select>
                     </div>
                     <div class="mb-3">
+                        <label for="nama" class="form-label">Outlet</label>
+                        <select class="form-select" aria-label="Pilih Tingkat Keahlian" name="id_outlet" required>
+                            <option value="<%= data.id_outlet %>">
+                                <%= data.nama_outlet %>
+                            </option>
+                            <% for(var i=0; i < data_outlet.length; i++){ %>
+                            <option value="<%= data_outlet[i].id_outlet %>">
+                                <%= data_outlet[i].nama_outlet %>
+                            </option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Stock</label>
+                        <input type="text" class="form-control" name="stock" value="<%= data.stock %>"
+                            required>
+                    </div>
+                    <div class="mb-3">
                         <label for="nama" class="form-label">Harga</label>
                         <input type="text" class="form-control" name="harga_menu" value="<%= data.harga_menu %>"
                             required>

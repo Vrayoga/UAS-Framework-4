@@ -1,0 +1,129 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var quantityInput = document.getElementById('quantity-input');
+        var modalMenuIdInput = document.getElementById('modal-menu-id');
+        var modalUserIdInput = document.getElementById('modal-user-id');
+        var minusButton = document.querySelector('.minus-btn');
+        var plusButton = document.querySelector('.plus-btn');
+
+        minusButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            if (quantityInput.value > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+            }
+        });
+
+        plusButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        });
+
+        document.getElementById('orderForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var jumlah = quantityInput.value;
+            var id_menu = modalMenuIdInput.value;
+            var id_users = modalUserIdInput.value;
+
+            var data = {
+                jumlah: jumlah,
+                id_menu: id_menu,
+                id_users: id_users
+            };
+
+            fetch('/pembayaran/store', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = '/menu/users';
+                        console.log(response)
+                    } else {
+                        console.error('Terjadi kesalahan dalam pemrosesan pesanan.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+
+        var modalImage = document.getElementById('modal-image');
+        var modalPrice = document.getElementById('modal-price');
+        var modalComposition = document.getElementById('modal-composition');
+
+        document.querySelectorAll('.pesan-button').forEach(function (button) {
+            button.addEventListener('click', function (event) {
+                var id_menu = button.dataset.idMenu;
+                var id_users = button.dataset.idUsers;
+
+                var card = button.closest('.card');
+                var imageSrc = card.querySelector('.card-image').src;
+                var price = card.querySelector('.keterangan p:nth-child(2)').innerText;
+                var composition = card.querySelector('.keterangan p:nth-child(3)').innerText;
+
+                modalImage.src = imageSrc;
+                modalPrice.innerText = 'Rp. ' + price;
+                modalComposition.innerText = composition;
+
+                modalMenuIdInput.value = id_menu;
+                modalUserIdInput.value = id_users;
+            });
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const quantityInputs = document.querySelectorAll('.quantity-input');
+
+        quantityInputs.forEach(input => {
+            input.addEventListener('change', function () {
+                const jumlah = this.value;
+                const idPembayaran = this.closest('.row').querySelector('.btn-danger')
+                    .getAttribute('href').split('/').pop();
+
+                fetch('/pembayaran/update', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            id_pembayaran: idPembayaran,
+                            jumlah: jumlah
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            console.log('Jumlah diperbarui');
+                        } else {
+                            console.error('Gagal memperbarui jumlah');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+        });
+    });
+</script>
+
+
+<script>
+    function checkLogin() {
+        // Mengambil nilai email dari elemen yang sesuai
+        var email = '<%= email %>';
+
+        // Cek jika email adalah 'Guest'
+        if (email === 'Guest') {
+            // Arahkan pengguna ke halaman login
+            window.location.href = '/login';
+        } else {
+            console.log('Pengguna sudah login');
+        }
+    }
+</script>

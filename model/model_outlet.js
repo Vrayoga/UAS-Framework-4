@@ -1,8 +1,8 @@
 const connection = require('../config/database');
 
-class Model_Outlet {
+class Model_outlet {
 
-    static async getAll() {
+    static async getAll(){
         return new Promise((resolve, reject) => {
             connection.query('SELECT * FROM outlet ORDER BY id_outlet DESC', (err, rows) => {
                 if (err) {
@@ -14,7 +14,7 @@ class Model_Outlet {
         });
     }
 
-    static async Store(Data) {
+    static async Store(Data){
         return new Promise((resolve, reject) => {
             connection.query('INSERT INTO outlet SET ?', Data, (err, result) => {
                 if (err) {
@@ -26,7 +26,7 @@ class Model_Outlet {
         });
     }
 
-    static async getId(id) {
+    static async getId(id){
         return new Promise((resolve, reject) => {
             connection.query('SELECT * FROM outlet WHERE id_outlet = ?', [id], (err, rows) => {
                 if (err) {
@@ -64,4 +64,4 @@ class Model_Outlet {
     }
 }
 
-module.exports = Model_Outlet;
+module.exports = Model_outlet;

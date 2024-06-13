@@ -6,6 +6,16 @@ const Model_Users = require('../model/Model_Users.js')
 const Model_Service = require('../model/Model_Service.js');
 const Model_Menu = require('../model/Model_Menu.js');
 
+router.get('/pemesanan', async (req, res, next) => {
+    try {
+        let rows = await Model_Pembayaran.getAll();
+        res.render('pemesanan', { data: rows });
+    } catch (error) {
+        next(error);
+    }
+});
+
+
 router.get('/checkout/:id', async function (req, res, next) {
     try {
         let id = req.params.id; // Ambil ID dari URL
@@ -22,7 +32,7 @@ router.get('/checkout/:id', async function (req, res, next) {
             });
         } else {
             req.flash('failure', 'Anda harus admin');
-            res.redirect('/sevice');
+            res.redirect('/service');
             console.log(Data[0].level_users);
         }
     } catch (error) {
@@ -40,7 +50,7 @@ router.post('/store', async function (req, res, next) {
             id_users, 
             id_menu,
             jumlah,
-            status_pembayaran: "belum dibayar"
+            status_pembayaran: "done"
         }
         console.log(Data);
         await Model_Pembayaran.Store(Data);
@@ -57,11 +67,10 @@ router.post('/update/(:id)', async function (req, res, next) {
     let id = req.params.id;
     let rows = await Model_Menu.getId(id);
 
-    let {
-        id_service
-    } = req.body;
+    let { id_service, metode_pembayaran } = req.body;
     let Data = {
         id_service,
+        metode_pembayaran,
         status_pembayaran: "done",
     }
     await Model_Pembayaran.Update(id, Data);
@@ -74,12 +83,36 @@ router.post('/update/(:id)', async function (req, res, next) {
     }
 })
 
+router.post('/update', async (req, res) => {
+    const { id_pembayaran, jumlah } = req.body;
+
+    try {
+        const result = await Model_Pembayaran.Updatejumlah(id_pembayaran, { jumlah });
+        res.json({ success: true });
+    } catch (error) {
+        console.error('Error updating jumlah:', error);
+        res.json({ success: false, message: 'Gagal memperbarui jumlah' });
+    }
+});
+
+// routes/pembayaran.js
+router.post('/deleteAll', async function (req, res, next) {
+    try {
+        await Model_Pembayaran.deleteAll();
+        req.flash('success', 'Berhasil menghapus semua data pembayaran');
+        res.redirect('/pembayaran/pemesanan');
+    } catch (error) {
+        req.flash('error', 'Terjadi kesalahan saat menghapus semua data pembayaran');
+        res.redirect('/pembayaran/pemesanan');
+    }
+});
+
 
 router.get('/delete/(:id)', async function (req, res) {
     let id = req.params.id;
     await Model_Pembayaran.Delete(id);
     req.flash('success', 'Berhasil Menghapus data!');
-    res.redirect('/menu/users');
+    res.redirect('/pembayaran/pemesanan');
 })
 
 

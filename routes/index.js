@@ -4,14 +4,35 @@ var router = express.Router();
 const bcrypt = require('bcrypt');
 
 var Model_Users = require('../model/Model_Users')
+var Model_Pembayaran = require('../model/Model_Pembayaran')
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-  let rows = await Model_Users.getAll();
-  res.render('auth/dashboard', {
-    title: 'Dashboard', // Menggunakan email pengguna
-    data : rows // Menggunakan data dari Model_Konser
-  });
+  try {
+    let id = req.session.userId || null;
+    let email = 'Guest'; // Default email for non-logged-in users
+    let Data = [] 
+    let bayar = []
+
+    if (id != null) {
+      let Data = await Model_Users.getId(id);
+      email = Data[0].email; // Update email if user is logged in
+      bayar = await Model_Pembayaran.getId(id);
+    }
+
+    console.log(Data, id);
+    res.render('users/index', {
+      title: 'Users Home',
+      email: email,
+      data_users: Data,
+      data_pembayaran: bayar,
+      id_users: id,
+    });
+    
+  } catch (error) {
+    console.log(error);
+    res.status(501).json('An error occurred');
+  }
 });
 
 router.get('/register', function(req, res, next) {

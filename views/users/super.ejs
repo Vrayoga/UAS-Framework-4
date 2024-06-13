@@ -1,3 +1,4 @@
+
 <style>
   .info-card {
     background: #fff;
@@ -121,11 +122,51 @@
           </div>
         </div>
 
+    <div class="row">
+      <div class="col-xxl-4 col-md-6">
+        <div class="card info-card sales-card">
+          <div class="card-body">
+            <h5 class="card-title">Menu <span>| Tersedia</span></h5>
+
+            <div class="d-flex align-items-center">
+              <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                <i class="bi bi-cart"></i>
+              </div>
+              <div class="ps-3">
+                <h6><%= menuCount %></h6>
+                <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1"></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+
+      <!-- Add another card here -->
+      <div class="col-xxl-4 col-md-6">
+        <div class="card info-card sales-card">
+          <div class="card-body">
+            <h5 class="card-title">Terjual <span>| Info</span></h5>
+
+            <div class="d-flex align-items-center">
+              <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                <i class="bi bi-info-circle"></i>
+              </div>
+              <div class="ps-3">
+                <h6><%= pembayaranCount %></h6>
+                <span class="text-success small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more cards as needed -->
+    </div>
+
+
     
+
   </main>
   
   <!-- End #main -->
   <%- include('../partials_admin/__footer.ejs') %>
-</body>

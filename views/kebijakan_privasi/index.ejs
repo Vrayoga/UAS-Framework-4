@@ -1,0 +1,262 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HokBen Kw</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/style.css"> <!-- Tautan ke file CSS -->
+
+</head>
+
+<body>
+    <style>
+        .Menu-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .hokbenMenu {
+            font-size: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        h2 {
+            color: #d91319;
+            margin-bottom: 10px;
+        }
+
+        .address {
+            color: #555555;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .open-hour {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .status {
+            color: green;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .distance {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .icon {
+            font-size: 24px;
+            color: #d91319;
+        }
+
+        .gambar {
+            padding-left: 190px;
+            padding-right: 190px;
+
+        }
+
+        .syarat {
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: 15px;
+            padding-left: 500px;
+            padding-right: 500px;
+            padding-bottom: 15px;
+        }
+
+        h4 {
+            font-weight: bold;
+            padding-left: 250px;
+            padding-right: 250px;
+        }
+    </style>
+
+    <img src="../../images/nav_login.png" alt="Gambar Atas" class="nav-image">
+    <button class="login-button">
+        <%= email %>
+
+    </button>
+    <button class="icon-button" style="margin-right: 90px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+            class="bi bi-person-fill login-icon" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+        </svg>
+    </button>
+
+    <header>
+        <nav>
+            <!-- Logo -->
+            <div class="logo">
+                <img src="../../images/HOKBEN.png" alt="Logo">
+            </div>
+
+            <!-- Menu -->
+            <ul class="menu">
+                <li><a href="/users" class="active">Beranda</a></li>
+                <li><a href="/menu/users">Menu</a></li>
+                <li><a href="/outlet/users">Outlet</a></li>
+                <li><a href="#">Promo</a></li>
+                <li><a href="/perusahaan">Perusahaan</a></li>
+                <li><a href="/contact/users">Kontak Kami</a></li>
+            </ul>
+
+            <!-- Cart and Order Buttons -->
+            <div class="cart-and-order" style="margin-right: 50px;">
+                <button class="cart-btn">
+                    <i class="fas fa-cart-shopping cart-icon" style="margin-top: 4px; margin-right: 30px;"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="order-btn">Pesan Sekarang</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Informasi Section -->
+    <section class="sectionMenu">
+        <div class="letakMenu">
+            <!-- Tiga Elemen dalam Satu Baris -->
+            <h1 class="hokbenMenu">
+                KEBIJAKAN PRIVASI | 個人情報の取り扱いについて
+            </h1>
+        </div>
+        </div>
+    </section>
+
+    <!-- container -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 my-3">
+                <div class="syarat">Kebijakan Privasi HokBen</div>
+                <img class="gambar" src="../../images/foto-hokben-terms.png" alt="Gambar">
+                <div class="text-center">
+                    <img src="" alt="" class="mw-100 pb-3">
+                </div>
+                <h4>Kebijakan Privasi ini terakhir diubah pada 15 Agustus 2016. PT. Eka Bogainti ("kami" atau "milik
+                    kami") menjalankan http://www.hokben.co.id ("Situs") dan aplikasi. Halaman ini memberi tahu Anda
+                    tentang kebijakan kami mengenai pengumpulan, penggunaan, dan pengungkapan Informasi Pribadi yang
+                    kami terima dari pengguna Situs dan aplikasi.</h4>
+                <h4>Kami menggunakan Informasi Pribadi Anda hanya untuk menyediakan dan meningkatkan Situs dan aplikasi.
+                    Dengan menggunakan Situs dan aplikasi, Anda menyetujui pengumpulan dan penggunaan informasi sesuai
+                    dengan kebijakan ini. Kecuali ditentukan lain dalam Kebijakan Privasi ini, istilah yang digunakan
+                    dalam Kebijakan Privasi ini memiliki arti yang sama seperti dalam Syarat dan Ketentuan kami, dapat
+                    diakses di http://www.hokben.co.id.',</h4>
+                <h4>Pengumpulan dan Penggunaan Informasi
+                    Saat menggunakan Situs dan aplikasi kami, kami dapat meminta Anda untuk memberikan kami informasi
+                    pengenal pribadi tertentu yang dapat digunakan untuk menghubungi atau mengidentifikasi Anda.
+                    Informasi yang dapat diidentifikasi secara pribadi dapat mencakup, tetapi tidak terbatas pada, nama,
+                    alamat email, alamat pos, dan nomor telepon Anda ("Informasi Pribadi").</h4>
+                <h4>Log Data
+                    Seperti banyak operator situs dan aplikasi, kami mengumpulkan informasi yang dikirimkan browser Anda
+                    setiap kali Anda mengunjungi Situs dan aplikasi kami ("Log Data"). Log Data ini dapat mencakup
+                    informasi seperti alamat Internet Protocol ("IP") komputer Anda, jenis peramban, versi peramban,
+                    halaman Situs kami dan aplikasi yang Anda kunjungi, waktu dan tanggal kunjungan Anda, waktu yang
+                    dihabiskan untuk halaman-halaman itu dan statistik lainnya.',</h4>
+                <h4>Cookies
+                    Cookie adalah file dengan sedikit data, yang mungkin menyertakan pengidentifikasi unik anonim.
+                    Cookie dikirimkan ke browser Anda dari situs web, aplikasi, dan disimpan di hard drive komputer
+                    Anda.
+                </h4>
+                <h4>Seperti banyak situs dan aplikasi, kami menggunakan "cookie" untuk mengumpulkan informasi. Anda
+                    dapat menginstruksikan browser Anda untuk menolak semua cookie atau untuk menunjukkan kapan cookie
+                    dikirim. Namun, jika Anda tidak menerima cookie, Anda mungkin tidak dapat menggunakan beberapa
+                    bagian dari Situs dan aplikasi kami.</h4>
+                <h4>Jangan Lacak
+                    Kami mendukung pengaturan browser Jangan Lacak. Jangan Lacak (atau Do Not Track) adalah preferensi
+                    yang dapat Anda atur di browser Anda agar situs web yang Anda kunjungi tahu bahwa anda tidak ingin
+                    mereka mengumpulkan data anda.
+
+                    Keamanan
+                    Keamanan Informasi Pribadi Anda penting bagi kami, tetapi ingat bahwa tidak ada metode transmisi
+                    melalui Internet, atau metode penyimpanan elektronik, yang 100% aman. Meskipun kami berusaha untuk
+                    menggunakan sarana yang dapat diterima secara komersial untuk melindungi Informasi Pribadi Anda,
+                    kami tidak dapat menjamin keamanan mutlaknya.',</h4>
+                <h4>Tautan ke Situs Lain
+                    Situs dan aplikasi kami dapat berisi tautan ke situs lain yang tidak dioperasikan oleh kami. Jika
+                    Anda mengklik tautan pihak ketiga, Anda akan diarahkan ke situs dan aplikasi pihak ketiga tersebut.
+                    Kami sangat menyarankan Anda untuk meninjau Kebijakan Privasi setiap situs dan aplikasi yang Anda
+                    kunjungi.
+
+                    PT. Eka Bogainti tidak memiliki kendali atas, dan tidak bertanggung jawab atas, konten, kebijakan
+                    privasi, atau praktik dari situs atau layanan pihak ketiga mana pun.</h4>
+                <h4>Perubahan pada Kebijakan Privasi Ini
+                    PT. Eka Bogainti dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Kami akan memberi tahu
+                    Anda tentang segala perubahan dengan memposting Kebijakan Privasi baru di Situs dan aplikasi. Anda
+                    disarankan untuk meninjau Kebijakan Privasi ini secara berkala untuk setiap perubahan.
+
+                    Kontak Kami
+                    Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini, silakan hubungi kami.</h4>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Section -->
+    <section class="footer-section">
+        <div class="footer-content">
+            <div class="footer-links">
+                <h3 class="footer-title">TAUTAN</h3>
+                <div class="footer-links-group">
+                    <div class="footer-links-column">
+                        <p class="footer-text"><a href="/perusahaan">Tentang Kami</a></p>
+                        <p class="footer-text"><a href="/contact/users">Kontak Kami</a></p>
+                    </div>
+                    <div class="footer-links-column-2">
+                        <p class="footer-text"><a href="/syarat_ketentuan">Syarat dan Ketentuan</a></p>
+                        <p class="footer-text"><a href="/kebijakan_privasi">Kebijakan Privasi</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-logo">
+            <img src="../../images/deliver.png" alt="Logo footer" class="gambar-footer">
+        </div>
+        <div class="footer-sosmed">
+            <p class="footer-text ikuti-kami">IKUTI KAMI</p>
+            <img src="../../images/yt.png" alt="Logo YouTube">
+            <img src="../../images/tweet.png" alt="Logo Twitter">
+            <img src="../../images/fb.png" alt="Logo Facebook">
+            <img src="../../images/ig.png" alt="Logo Instagram">
+            <img src="../../images/tiktok.png" alt="Logo TikTok">
+            <img src="../../images/wa.png" alt="Logo WhatsApp">
+        </div>
+        <!-- Tambahkan gambar-gambar sosial media tambahan di sini -->
+        <img src="../../images/dw_app.png" alt="Extra Image 1" class="sosmed-extra-1">
+        <img src="../../images/dw_gugel.png" alt="Extra Image 2" class="sosmed-extra-2">
+        <div class="text-footer">
+            <p>Semua gambar dan materi dilindungi hak cipta dan merupakan milik PT Eka Bogainti.
+                Penggunaan dan / atau duplikasi gambar dan materi ini tanpa izin adalah melanggar hukum.</p>
+        </div>
+
+        <img src="../../images/frame_bawah.png" alt="backgorund footer" class="bg-footer">
+    </section>
+
+
+
+    <script src="../../js/script.js"></script> <!-- Tautan ke file JavaScript -->
+</body>
+
+</html>

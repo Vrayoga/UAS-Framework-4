@@ -28,7 +28,9 @@
                                                 <th scope="col">Nama Menu</th>
                                                 <th scope="col">Kategori</th>
                                                 <th scope="col">Komposisi</th>
+                                                <th scope="col">Nama Outlet</th>
                                                 <th scope="col">Harga</th>
+                                                <th scope="col">Stock</th>
                                                 <th colspan="2" scope="col">Aksi</th>
                                             </tr>
                                         </thead>
@@ -52,7 +54,13 @@
                                                         <%= data[i].komposisi_menu %>
                                                     </td>
                                                     <td>
+                                                        <%= data[i].nama_outlet %>
+                                                    </td>
+                                                    <td>
                                                         <%= data[i].harga_menu %>
+                                                    </td>
+                                                    <td>
+                                                        <%= data[i].stock %>
                                                     </td>
                                                     <td>
                                                         <a href="/menu/edit/<%= data[i].id_menu %>"
