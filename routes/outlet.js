@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const Model_outlet = require('../model/model_outlet.js');
+const Model_outlet = require('../model/Model_outlet.js');
 const Model_Users = require('../model/Model_Users.js');
+const Model_Pembayaran = require('../model/Model_Pembayaran.js');
 
 router.get('/', async (req, res, next) => {
     try {
@@ -78,14 +79,27 @@ router.get('/delete/:id', async (req, res, next) => {
 
 router.get('/users', async function (req, res, next) {
     try {
-        // let level_users = req.session.level;
         let id = req.session.userId;
-        let Data = await Model_Users.getId(id);
-        let rows = await Model_outlet.getAll();
+        let id_kategori = req.params.id_kategori;
+        let id_users = req.session.userId;
+        let data = await Model_outlet.getAll();
+        let Data = []
+        let email = []
+        let bayar = []
+
+        if (id) {
+            Data = await Model_Users.getId(id);
+            email = (Data[0] && Data[0].email) ? Data[0].email : 'Guest';
+            bayar = await Model_Pembayaran.getId(id);
+        }
+
         res.render('outlet/users/index', {
-            data: rows,
-            email: Data[0].email
-        })
+            data: data,
+            id_users: req.session.userId, // Assuming you store user id in session
+            email: email,
+            data_pembayaran: bayar,
+            data_users: Data
+        });
     } catch (error) {
         console.error("Error:", error);
         req.flash('invalid', 'Terjadi kesalahan saat memuat data pengguna');

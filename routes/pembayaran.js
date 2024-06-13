@@ -50,7 +50,8 @@ router.post('/store', async function (req, res, next) {
             id_users, 
             id_menu,
             jumlah,
-            status_pembayaran: "order"
+            status_pembayaran: "order",
+            status_pemesanan: "diterima"
         }
         console.log(Data);
         await Model_Pembayaran.Store(Data);
@@ -107,12 +108,22 @@ router.post('/deleteAll', async function (req, res, next) {
     }
 });
 
+// router.post('/status/dimasak', async function(req,res){
+//     await Model_Pembayaran.
+// })
 
 router.get('/delete/(:id)', async function (req, res) {
     let id = req.params.id;
     await Model_Pembayaran.Delete(id);
     req.flash('success', 'Berhasil Menghapus data!');
     res.redirect('/pembayaran/pemesanan');
+})
+
+router.get('/delete/order/(:id)', async function (req, res) {
+    let id = req.params.id;
+    await Model_Pembayaran.Delete(id);
+    req.flash('success', 'Berhasil Menghapus data!');
+    res.redirect('/menu/users');
 })
 
 

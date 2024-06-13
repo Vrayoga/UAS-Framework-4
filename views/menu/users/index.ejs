@@ -166,11 +166,9 @@
         <ul class="menu">
             <li><a href="/users" class="active">Beranda</a></li>
             <li><a href="/menu/users">Menu</a></li>
-            <li><a href="#">Outlet</a></li>
-            <li><a href="#">Promo</a></li>
-            <li><a href="#">Perusahaan</a></li>
-            <li><a href="#">Berita</a></li>
-            <li><a href="#">Kontak Kami</a></li>
+            <li><a href="/outlet/users">Outlet</a></li>
+            <li><a href="/perusahaan">Perusahaan</a></li>
+            <li><a href="/contact/users">Kontak Kami</a></li>
             <li>
                 <% if (data_users.length > 0 && data_users[0].id_users) { %>
                 <a href="#">Profil</a>
@@ -232,12 +230,12 @@
                 class="card-image">
             <div class="keterangan">
                 <p><strong><%= data[i].nama_menu %></strong></p>
-                <p>Rp. <%= data[i].harga_menu %></p>
+                <p><%= data[i].harga_menu %></p>
                 <p style="display: none;"><%= data[i].komposisi_menu %></p>
                 <div class="details">
                     <a href="/menu/users/<%= data[i].id_menu %>"
                         style="color: #d91319; text-decoration: underline;">Detail</a>
-                    <button type="button" class="pesan-button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    <button type="button" class="pesan-button" data-bs-toggle="modal" onclick="checkLogin()" data-bs-target="#exampleModal"
                         data-id-menu="<%= data[i].id_menu %>" data-id-users="<%= id_users %>">+ Pesan</button>
                 </div>
             </div>
@@ -334,23 +332,23 @@
 </div>
 
 
-
+<%- include('../../partials/__modal_checkout.ejs') %>
 
 
 <!-- Footer Section -->
 <section class="footer-section">
     <div class="footer-content">
         <div class="footer-links">
+            <p class="mt-3" style="font-weight: bold;">* Salad & Soup only for Dine In</p>
             <h3 class="footer-title">TAUTAN</h3>
             <div class="footer-links-group">
                 <div class="footer-links-column">
-                    <p class="footer-text"><a href="#">Tentang Kami</a></p>
+                    <p class="footer-text"><a href="/perusahaan">Tentang Kami</a></p>
                     <p class="footer-text"><a href="/contact/users">Kontak Kami</a></p>
-                    <p class="footer-text"><a href="/syarat & ketentuan">Syarat dan Ketentuan</a></p>
                 </div>
                 <div class="footer-links-column-2">
+                    <p class="footer-text"><a href="/syarat & ketentuan">Syarat dan Ketentuan</a></p>
                     <p class="footer-text"><a href="/kebijakan_privasi">Kebijakan Privasi</a></p>
-                    <p class="footer-text"><a href="#">Pelacak Pesanan</a></p>
                 </div>
             </div>
         </div>

@@ -720,7 +720,7 @@ nav {
   transition: background-color 0.3s, color 0.3s;
 }
 
-<<<<<<< HEAD
+
 .menu-button.active,
 .menu-button:hover {
   background-color: red;
@@ -732,5 +732,3 @@ nav {
 }
 
 /* */
-=======
->>>>>>> 1a369da93ad1ac67a399614823d363365fbed248

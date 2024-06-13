@@ -145,6 +145,18 @@ static async deleteAll() {
         });
     }
 
+    static async updateDimasak(id) {
+        return new Promise((resolve, reject) => {
+            connection.query('update pembayaran set status_pemesanan = "dimasak" where id = ? ', id, function(err, result) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(result);
+                }
+            })
+        })
+    }
+
 }
 
 
