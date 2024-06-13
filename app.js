@@ -16,8 +16,11 @@ var outletRouter = require('./routes/outlet');
 var serviceRouter = require('./routes/service');
 var pembayaranRouter = require('./routes/pembayaran');
 var contactRouter = require('./routes/contact');
+<<<<<<< master
+=======
 var syaratRouter = require('./routes/syarat_ketentuan');
 var privasiRouter = require('./routes/kebijakan_privasi')
+>>>>>>> main
 //var pemesananRouter = require('./routes/pemesanan');
 
 var app = express();
@@ -56,8 +59,11 @@ app.use('/outlet', outletRouter);
 app.use('/service', serviceRouter);
 app.use('/pembayaran', pembayaranRouter);
 app.use('/contact', contactRouter);
+<<<<<<< master
+=======
 app.use('/syarat_ketentuan', syaratRouter);
 app.use('/kebijakan_privasi', privasiRouter);
+>>>>>>> main
 //app.use('/pemesanan', pemesananRouter);   
 
 
