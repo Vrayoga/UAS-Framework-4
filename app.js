@@ -17,7 +17,7 @@ var serviceRouter = require('./routes/service');
 var pembayaranRouter = require('./routes/pembayaran');
 var contactRouter = require('./routes/contact');
 var syaratRouter = require('./routes/syarat_ketentuan');
-var privasiRouter = require('./routes/kebijakan_privasi')r
+var privasiRouter = require('./routes/kebijakan_privasi');
 var perusahaanRouter = require('./routes/perusahaan')
 
 //var pemesananRouter = require('./routes/pemesanan');

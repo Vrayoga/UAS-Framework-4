@@ -100,7 +100,7 @@ router.get('/delete/(:id)', async function (req, res) {
     let id = req.params.id;
     await Model_Pembayaran.Delete(id);
     req.flash('success', 'Berhasil Menghapus data!');
-    res.redirect('/menu/users');
+    res.redirect('/pembayaran/pemesanan');
 })
 
 

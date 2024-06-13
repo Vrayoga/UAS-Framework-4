@@ -26,6 +26,7 @@
                                     <th scope="col">Nama Pengguna</th>
                                     <th scope="col">Nama Menu</th>
                                     <th scope="col">Status Pembayaran</th>
+                                    <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,6 +36,10 @@
                                     <td><%= item.nama %></td>
                                     <td><%= item.nama_menu %></td>
                                     <td><%= item.status_pembayaran %></td>
+                                    <td>
+                                        <a href="/pembayaran/delete/<%= item.id_pembayaran %>"
+                                            class="btn btn-sm btn-danger">Delete</a>
+                                    </td>
                                 </tr>
                                 <% }); %>
                             </tbody>
