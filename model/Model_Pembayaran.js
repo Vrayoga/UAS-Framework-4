@@ -70,6 +70,24 @@ class Model_Pembayaran {
         });
     }
 
+    // Model_Pembayaran.js
+static async deleteAll() {
+    try {
+        await new Promise((resolve, reject) => {
+            connection.query('DELETE FROM pembayaran', (err, result) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(result);
+                }
+            });
+        });
+    } catch (error) {
+        throw error;
+    }
+}
+
+
 
     static async getId(id) {
         return new Promise((resolve, reject) => {

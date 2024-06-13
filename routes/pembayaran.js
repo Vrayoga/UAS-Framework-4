@@ -50,7 +50,7 @@ router.post('/store', async function (req, res, next) {
             id_users, 
             id_menu,
             jumlah,
-            status_pembayaran: "order"
+            status_pembayaran: "done"
         }
         console.log(Data);
         await Model_Pembayaran.Store(Data);
@@ -94,6 +94,19 @@ router.post('/update', async (req, res) => {
         res.json({ success: false, message: 'Gagal memperbarui jumlah' });
     }
 });
+
+// routes/pembayaran.js
+router.post('/deleteAll', async function (req, res, next) {
+    try {
+        await Model_Pembayaran.deleteAll();
+        req.flash('success', 'Berhasil menghapus semua data pembayaran');
+        res.redirect('/pembayaran/pemesanan');
+    } catch (error) {
+        req.flash('error', 'Terjadi kesalahan saat menghapus semua data pembayaran');
+        res.redirect('/pembayaran/pemesanan');
+    }
+});
+
 
 router.get('/delete/(:id)', async function (req, res) {
     let id = req.params.id;
