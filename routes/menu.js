@@ -8,7 +8,7 @@ const Model_Menu = require('../model/Model_Menu.js');
 const Model_Users = require('../model/Model_Users.js')
 const Model_Kategori = require('../model/Model_Kategori.js');
 const Model_Pembayaran = require('../model/Model_Pembayaran.js');
-const Model_outlet = require('../model/model_outlet.js');
+const Model_outlet = require('../model/Model_outlet.js');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {

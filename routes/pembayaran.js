@@ -50,7 +50,7 @@ router.post('/store', async function (req, res, next) {
             id_users, 
             id_menu,
             jumlah,
-            status_pembayaran: "done"
+            status_pembayaran: "order"
         }
         console.log(Data);
         await Model_Pembayaran.Store(Data);
