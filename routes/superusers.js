@@ -38,8 +38,6 @@ router.get('/', async function(req, res, next) {
     let Data = await Model_Users.getId(id);
     let Menus = await Model_Menu.getAll();
     let pembayarans = await Model_Pembayaran.getAll();
-    console.log('pembayaran :', pembayarans)
-    console.log('Menus:', Menus);
 
     if (Data.length > 0) {
       if (Data[0].level_users != 2) {
@@ -56,6 +54,7 @@ router.get('/', async function(req, res, next) {
       res.status(401).json({ error: 'User not found' });
     }
   } catch (error) {
+    console.log(error);
     res.status(501).json('Login access required');
   }
 });

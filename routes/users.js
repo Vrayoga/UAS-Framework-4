@@ -1,22 +1,31 @@
 var express = require('express');
 var router = express.Router();
 const Model_Users = require('../model/Model_Users');
+const Model_Pembayaran = require('../model/Model_Pembayaran');
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
   try {
+    let id = req.session.userId || null;
     let email = 'Guest'; // Default email for non-logged-in users
+    let Data = [] 
+    let bayar = []
 
-    if (req.session.userId) {
-      let id = req.session.userId;
+    if (id != null) {
       let Data = await Model_Users.getId(id);
       email = Data[0].email; // Update email if user is logged in
+      bayar = await Model_Pembayaran.getId(id);
     }
 
+    console.log(Data, id);
     res.render('users/index', {
       title: 'Users Home',
-      email: email
+      email: email,
+      data_users: Data,
+      data_pembayaran: bayar,
+      id_users: id,
     });
+    
   } catch (error) {
     console.log(error);
     res.status(501).json('An error occurred');
@@ -67,6 +76,7 @@ router.get('/profil/(:id)', async function (req, res, next) {
           id: Data[0].id_users,
           data: Data,
           email: email
+
       })
       }
   } catch(error) {

@@ -1,0 +1,56 @@
+<style>
+    /* Gaya dasar untuk ul dan li */
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Gaya dasar untuk link */
+    li a {
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+        color: black;
+        /* Ubah warna teks sesuai kebutuhan */
+    }
+
+    /* Sembunyikan dropdown menu awalnya */
+    li ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        background-color: white;
+        /* Ubah warna latar belakang sesuai kebutuhan */
+        border: 1px solid #ccc;
+        /* Tambahkan border jika diperlukan */
+    }
+
+    /* Tampilkan dropdown menu saat hover */
+    li:hover ul {
+        display: block;
+    }
+
+    /* Gaya untuk link dalam dropdown */
+    li ul li a {
+        padding: 10px;
+        color: black;
+        /* Ubah warna teks sesuai kebutuhan */
+        white-space: nowrap;
+    }
+
+    /* Gaya untuk link dalam dropdown saat hover */
+    li ul li a:hover {
+        background-color: #f0f0f0;
+        /* Ubah warna latar belakang saat hover sesuai kebutuhan */
+    }
+</style>

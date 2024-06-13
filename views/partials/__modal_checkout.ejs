@@ -1,0 +1,45 @@
+<div class="modal fade" id="exampleModal2" tabindex="-2" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <% if (data_pembayaran.length > 0) { %>
+                <h2 class="fw-bold mb-3">Cart <%= data_pembayaran[0].nama_menu %></h2>
+                <% for(var i=0; i < data_pembayaran.length; i++) { %>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <div class="list-order">
+                            <img src="/images/menu/<%= data_pembayaran[i].gambar_menu %>" height="80px" width="100px"
+                                alt="Product Image">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <p><strong><%= data_pembayaran[i].nama_menu %></strong></p>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="quantity-container text-center text-md-start mt-3">
+                            <input type="number" name="jumlah" class="form-control quantity-input"
+                                value="<%= data_pembayaran[i].jumlah %>">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <p>Rp. <%= data_pembayaran[i].harga_menu * data_pembayaran[i].jumlah %></p>
+                    </div>
+                    <div class="col-12 text-center mt-2">
+                        <a href="/pembayaran/delete/<%= data_pembayaran[i].id_pembayaran %>"
+                            class="btn btn-sm btn-danger">Delete</a>
+                    </div>
+                </div>
+                <% } %>
+                <% } else { %>
+                <p>Cart is empty.</p>
+                <% } %>
+            </div>
+            <div class="d-flex justify-content-end mt-4 me-4 mb-4 gap-3">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                <% if (data_pembayaran.length > 0) { %>
+                <a href="/pembayaran/checkout/<%= id_users %>" class="btn btn-sm btn-warning">Checkout</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>

@@ -67,11 +67,10 @@ router.post('/update/(:id)', async function (req, res, next) {
     let id = req.params.id;
     let rows = await Model_Menu.getId(id);
 
-    let {
-        id_service
-    } = req.body;
+    let { id_service, metode_pembayaran } = req.body;
     let Data = {
         id_service,
+        metode_pembayaran,
         status_pembayaran: "done",
     }
     await Model_Pembayaran.Update(id, Data);

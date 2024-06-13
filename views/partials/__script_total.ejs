@@ -1,0 +1,17 @@
+<script>
+    // Mendapatkan elemen input total
+    var totalInput = document.getElementById('total');
+    
+    // Inisialisasi total harga
+    var totalHarga = 0;
+    
+    // Iterasi melalui array data
+    <% for(var i=0; i < data.length; i++){ %>
+    // Menambahkan harga_menu ke total harga
+    totalHarga += <%= data[i].harga_menu * data[i].jumlah %>;
+    <% } %>
+
+    
+    // Menetapkan nilai total ke input total
+    totalInput.value = totalHarga;
+</script>

@@ -7,6 +7,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css"> <!-- Tautan ke file CSS -->
 
+<%- include('../partials/__style.ejs') %>
+
 </head>
 <body>
     <img src="images/nav_login.png" alt="Gambar Atas" class="nav-image">
@@ -20,33 +22,7 @@
         </svg>
     </button>
 
-    <header>
-        <nav>
-            <!-- Logo -->
-            <div class="logo">
-                <img src="images/HOKBEN.png" alt="Logo">
-            </div>
-
-            <!-- Menu -->
-            <ul class="menu">
-                <li><a href="/users" class="active">Beranda</a></li>
-                <li><a href="/menu/users">Menu</a></li>
-                <li><a href="/outlet/users">Outlet</a></li>
-                <li><a href="#">Promo</a></li>
-                <li><a href="/perusahaan">Perusahaan</a></li>
-                <li><a href="/contact/users">Kontak Kami</a></li>
-            </ul>
-
-            <!-- Cart and Order Buttons -->
-            <div class="cart-and-order" style="margin-right: 50px;">
-                <button class="cart-btn">
-                    <i class="fas fa-cart-shopping cart-icon" style="margin-top: 4px; margin-right: 30px;"></i>
-                    <span class="cart-count">0</span>
-                </button>
-                <button class="order-btn">Pesan Sekarang</button>
-            </div>
-        </nav>
-    </header>
+    <%- include('../partials/__navbar.ejs') %>
 
     <!-- Photo Section -->
     <img src="images/gambar_samping1.png" alt="Photo 1" class="photo left">
@@ -147,46 +123,8 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <section class="footer-section">
-        <div class="footer-content">
-            <div class="footer-links">
-                <h3 class="footer-title">TAUTAN</h3>
-                <div class="footer-links-group">
-                    <div class="footer-links-column">
-                        <p class="footer-text"><a href="/perusahaan">Tentang Kami</a></p>
-                        <p class="footer-text"><a href="/contact/users">Kontak Kami</a></p>
-                    </div>
-                    <div class="footer-links-column-2">
-                        <p class="footer-text"><a href="/syarat_ketentuan">Syarat dan Ketentuan</a></p>
-                        <p class="footer-text"><a href="/kebijakan_privasi">Kebijakan Privasi</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-logo">
-            <img src="images/deliver.png" alt="Logo footer" class="gambar-footer">
-        </div>
-        <div class="footer-sosmed">
-            <p class="footer-text ikuti-kami">IKUTI KAMI</p>
-            <img src="images/yt.png" alt="Logo YouTube">
-            <img src="images/tweet.png" alt="Logo Twitter">
-            <img src="images/fb.png" alt="Logo Facebook">
-            <img src="images/ig.png" alt="Logo Instagram">
-            <img src="images/tiktok.png" alt="Logo TikTok">
-            <img src="images/wa.png" alt="Logo WhatsApp">
-        </div>
-        <!-- Tambahkan gambar-gambar sosial media tambahan di sini -->
-        <img src="images/dw_app.png" alt="Extra Image 1" class="sosmed-extra-1">
-        <img src="images/dw_gugel.png" alt="Extra Image 2" class="sosmed-extra-2">
-        <div class="text-footer">
-            <p>Semua gambar dan materi dilindungi hak cipta dan merupakan milik PT Eka Bogainti.
-                Penggunaan dan / atau duplikasi gambar dan materi ini tanpa izin adalah melanggar hukum.</p>
-        </div>
-
-        <img src="images/frame_bawah.png" alt="backgorund footer" class="bg-footer">
-    </section>
-
+    <%- include('../partials/__footer.ejs') %>
+    
     <script src="js/script.js"></script> <!-- Tautan ke file JavaScript -->
 </body>
 

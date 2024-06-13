@@ -1,0 +1,45 @@
+<nav>
+    <!-- Logo -->
+    <div class="logo">
+        <img src="../../../images/HOKBEN.png" alt="Logo">
+    </div>
+
+    <!-- Menu -->
+    <ul class="menu">
+        <li><a href="/users" class="active">Beranda</a></li>
+        <li><a href="/menu/users">Menu</a></li>
+        <li><a href="/outlet/users">Outlet</a></li>
+        <li><a href="#">Promo</a></li>
+        <li><a href="/perusahaan">Perusahaan</a></li>
+        <li><a href="/contact/users">Kontak Kami</a></li>
+        <li>
+            <% if (id_users ) { %>
+            <a href="#">Profil</a>
+            <ul>
+                    <li><a href="/users/profil/<%= id_users %>">Profil Anda</a></li>
+                    <li><a href="/users/password">Change Password</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                <% } else { %>
+                    
+                <% } %>
+            </ul>
+        </li>
+    </ul>
+
+    <% 
+        let totalItems = 0;
+        for (let i = 0; i < data_pembayaran.length; i++) {
+            totalItems += data_pembayaran[i].jumlah;
+        }
+    %>
+
+    <!-- Cart and Order Buttons -->
+    <div class="cart-and-order" style="margin-right: 50px;">
+        <button class="cart-btn" data-bs-toggle="modal" data-bs-target="#exampleModal2" onclick="checkLogin()"">
+            <i class=" fas fa-cart-shopping cart-icon" style="margin-top: 4px; margin-right: 30px;"></i>
+            <span class="cart-count"><%= totalItems %></span>
+        </button>
+        <!-- Tambahkan onclick event untuk mengecek status email -->
+        <button class="order-btn">Pesan Sekarang</button>
+    </div>
+</nav>

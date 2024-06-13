@@ -88,7 +88,7 @@ class Model_Pembayaran {
 
     static async Update(id, Data) {
         return new Promise((resolve, reject) => {
-            let query = connection.query('update pembayaran set ? where id_users =' + id, Data, function (err, row, result) {
+            let query = connection.query('UPDATE pembayaran SET ? WHERE id_users = ? AND status_pembayaran = "order"', [Data, id], function (err, row, result) {
                 if (err) {
                     reject(err);
                     console.log(err);

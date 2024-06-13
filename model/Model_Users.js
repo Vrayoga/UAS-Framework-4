@@ -44,8 +44,10 @@ class Model_Users {
             connection.query('SELECT * FROM users WHERE id_users = ?', [id], (err, rows) => {
                 if (err) {
                     reject(err);
+                    console.log(err)
                 } else {
                     resolve(rows);
+                    console.log(rows)
                 }
             });
         });

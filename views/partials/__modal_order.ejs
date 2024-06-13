@@ -1,0 +1,35 @@
+<!-- Modal section Order-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form id="orderForm" action="/pembayaran/store" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-12 col-md-6 my-3 my-md-auto text-center">
+                            <img class="img-fluid rounded mx-auto d-block" src="" id="modal-image" alt="Menu Image"
+                                style="height: 350px; width: 400px;">
+                        </div>
+                        <div class="col-12 col-md-6 my-3 my-md-auto">
+                            <h5 class="text-hokben-red text-center text-md-start" id="modal-price" style="color: red">
+                            </h5>
+                            <p class="small text-center text-md-start" style="color: grey">Composition :</p>
+                            <p class="small text-center text-md-start" id="modal-composition"></p>
+                            <div class="quantity-container text-center text-md-start mt-3">
+                                <button class="btn btn-outline-secondary quantity-btn minus-btn">-</button>
+                                <input type="number" id="quantity-input" name="jumlah"
+                                    class="form-control quantity-input" value="1">
+                                <button class="btn btn-outline-secondary quantity-btn plus-btn">+</button> 
+                            </div>
+                            <input type="hidden" id="modal-menu-id" name="id_menu">
+                            <input type="hidden" id="modal-user-id" name="id_users">
+                            <div class="text-center text-md-start mt-3">
+                                <button class="btn btn-outline-hokben mr-2" data-bs-dismiss="modal">Back</button>
+                                <button type="submit" class="btn btn-primary">+ Pesan</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
