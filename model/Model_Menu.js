@@ -41,6 +41,7 @@ class Model_Menu {
                 } else {
                     resolve(rows);
                     console.log(id);
+                    console.log(id);
                 }
             })
         })

@@ -117,18 +117,18 @@
     <div class="container-detail">
         <div class="row">
             <div class="col-12 col-md-6 my-3 my-md-auto text-center">
-                <img class="img-fluid rounded mx-auto d-block" src="/images/menu/<%= data.gambar_menu %>"
+                <img class="img-fluid rounded mx-auto d-block" src="/images/menu/<%= data[0].gambar_menu %>"
                     alt="PROMO BUNDLING 3 RAMEN" style="height: 350px; width: 350px;">
             </div>
             <div class="col-12 col-md-6 my-3 my-md-auto">
                 <h5 class="text-hokben-red text-center text-md-start">
-                    Rp. <%= data.harga_menu %> </h5>
+                    Rp. <%= data[0].harga_menu %> </h5>
                 <p class="small text-center text-md-start" style="color: grey">Composition :</p>
-                <p class="small text-center text-md-start"><%= data.komposisi_menu %> </p>
+                <p class="small text-center text-md-start"><%= data[0].komposisi_menu %> </p>
                 <div class="text-center text-md-start mt-3">
                     <button class="btn btn-outline-hokben mr-2" onclick="window.history.back()">Back</button>
                     <button type="button" class="pesan-button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        data-id-menu="<%= data.id_menu %>" onclick="checkLogin()" data-id-users="<%= id_users %>">+ Pesan</button>
+                        data-id-menu="<%= data[0].id_menu %>" onclick="checkLogin()" data-id-users="<%= id_users %>">+ Pesan</button>
                 </div>
             </div>
         </div>
@@ -258,6 +258,21 @@
             });
         });
     });
+</script>
+
+<script>
+    function checkLogin() {
+        // Mengambil nilai email dari elemen yang sesuai
+        var email = '<%= email %>';
+
+        // Cek jika email adalah 'Guest'
+        if (email === 'Guest') {
+            // Arahkan pengguna ke halaman login
+            window.location.href = '/login';
+        } else {
+            console.log('Pengguna sudah login');
+        }
+    }
 </script>
 
 
