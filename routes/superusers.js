@@ -1,11 +1,10 @@
 var express = require('express');
 const Model_Users = require('../model/Model_Users');
-const Model_Menu = require('../model/Model_Menu');r
+const Model_Menu = require('../model/Model_Menu');
 const Model_Pembayaran = require('../model/Model_Pembayaran');
 const Model_kategori = require('../model/Model_Kategori');
 const Model_outlet = require('../model/Model_outlet');
 const Model_contact = require('../model/Model_Contact');
-const Model_Pembayaran = require ('../model/Model_Pembayaran');
 
 var router = express.Router();
 

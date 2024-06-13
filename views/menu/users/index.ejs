@@ -1,30 +1,24 @@
-<%- include('../../partials/__head.ejs') %>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HokBen Kw</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../../../css/style.css"> <!-- Tautan ke file CSS -->
+</head>
 <style>
+    
+
+    
     .menu-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        /* Default: Three columns */
         gap: 15px;
-        /* Space between items */
         padding: 15px;
-        /* Container padding */
         max-width: 1200px;
-        /* Maximum width of the container */
         margin: 0 auto;
-        /* Center the container */
-    }
-
-    .menu-container {
-        display: grid;
-        gap: 15px;
-        /* Space between items */
-        padding: 15px;
-        /* Container padding */
-        max-width: 1200px;
-        /* Maximum width of the container */
-        margin: 0 auto;
-        /* Center the container */
     }
 
     .Menu-cards {
@@ -37,50 +31,16 @@
 
     .card {
         margin: 10px;
-        /* Add margin between cards */
-        /* Ensure the card doesn't exceed half of the container width */
         max-width: calc(50% - 20px);
-        /* Ensure the card doesn't exceed half of the container width */
         box-sizing: border-box;
-        /* Include padding and border in the width */
         display: flex;
         flex-direction: column;
-        /* Stack child elements vertically */
     }
 
     .card .card-image {
         height: 250px;
-        /* Atur tinggi gambar */
         width: 300px;
-        /* Atur lebar gambar */
     }
-
-    @media (max-width: 1268px) {
-        .card {
-            flex: 0 0 calc(60% - 20px);
-            /* Full width on smaller screens */
-            max-width: calc(45% - 20px);
-            /* Ensure full width on smaller screens */
-        }
-    }
-
-    @media (max-width: 1068px) {
-        .card {
-            flex: 0 0 calc(100% - 20px);
-            /* Full width on smaller screens */
-            max-width: calc(100% - 20px);
-            /* Ensure full width on smaller screens */
-            margin-top: 30px;
-        }
-    }
-
-    @media (max-width: 1023px) {
-        .modal-dialog {
-            max-width: 90%;
-            /* Atur lebar modal menjadi 90% saat lebar layar 1023px atau kurang */
-        }
-    }
-
 
     .menu-button {
         padding: 10px 20px;
@@ -106,49 +66,6 @@
         /* Prevent buttons from stretching */
         margin: 0 5px;
         /* Add margin between buttons and input */
-    }
-
-
-    @media (max-width: 576px) {
-        .modal-lg {
-            max-width: 100%;
-        }
-    }
-
-
-    /* Large screens: Five columns */
-    @media (min-width: 1200px) {
-        .menu-container {
-            grid-template-columns: repeat(5, 1fr);
-        }
-    }
-
-    /* Medium screens: Four columns */
-    @media (min-width: 992px) and (max-width: 1199px) {
-        .menu-container {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-
-    /* Small screens: Three columns */
-    @media (min-width: 768px) and (max-width: 991px) {
-        .menu-container {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    /* Extra small screens: Two columns */
-    @media (max-width: 767px) {
-        .menu-container {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    /* Very small screens: One column */
-    @media (max-width: 576px) {
-        .menu-container {
-            grid-template-columns: 1fr;
-        }
     }
 
     .icon {
@@ -248,12 +165,12 @@
         <!-- Menu -->
         <ul class="menu">
             <li><a href="/users" class="active">Beranda</a></li>
-
             <li><a href="/menu/users">Menu</a></li>
-            <li><a href="/outlet/users">Outlet</a></li>
+            <li><a href="#">Outlet</a></li>
             <li><a href="#">Promo</a></li>
-            <li><a href="/perusahaan">Perusahaan</a></li>
-            <li><a href="/contact/users">Kontak Kami</a></li>
+            <li><a href="#">Perusahaan</a></li>
+            <li><a href="#">Berita</a></li>
+            <li><a href="#">Kontak Kami</a></li>
             <li>
                 <% if (data_users.length > 0 && data_users[0].id_users) { %>
                 <a href="#">Profil</a>
@@ -314,14 +231,14 @@
             <img src="/images/menu/<%= data[i].gambar_menu %>" height="250px" width="300px" alt="Product Image"
                 class="card-image">
             <div class="keterangan">
-                <p><strong><%= data[i].nama_menu %> </strong></p>
+                <p><strong><%= data[i].nama_menu %></strong></p>
                 <p>Rp. <%= data[i].harga_menu %></p>
                 <p style="display: none;"><%= data[i].komposisi_menu %></p>
                 <div class="details">
                     <a href="/menu/users/<%= data[i].id_menu %>"
                         style="color: #d91319; text-decoration: underline;">Detail</a>
                     <button type="button" class="pesan-button" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        data-id-menu="<%= data[i].id_menu %>" onclick="checkLogin()" data-id-users="<%= id_users %>">+ Pesan</button>
+                        data-id-menu="<%= data[i].id_menu %>" data-id-users="<%= id_users %>">+ Pesan</button>
                 </div>
             </div>
         </div>
@@ -331,12 +248,92 @@
 </section>
 <!-- Informasi Section -->
 
-<%- include('../../partials/__modal_order.ejs') %>
+
+<!-- Modal section Order-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form id="orderForm" action="/pembayaran/store" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-12 col-md-6 my-3 my-md-auto text-center">
+                            <img class="img-fluid rounded mx-auto d-block" src="" id="modal-image" alt="Menu Image"
+                                style="height: 350px; width: 400px;">
+                        </div>
+                        <div class="col-12 col-md-6 my-3 my-md-auto">
+                            <h5 class="text-hokben-red text-center text-md-start" id="modal-price" style="color: red">
+                            </h5>
+                            <p class="small text-center text-md-start" style="color: grey">Composition :</p>
+                            <p class="small text-center text-md-start" id="modal-composition"></p>
+                            <div class="quantity-container text-center text-md-start mt-3">
+                                <button class="btn btn-outline-secondary quantity-btn minus-btn">-</button>
+                                <input type="number" id="quantity-input" name="jumlah"
+                                    class="form-control quantity-input" value="1">
+                                <button class="btn btn-outline-secondary quantity-btn plus-btn">+</button>
+                            </div>
+                            <input type="hidden" id="modal-menu-id" name="id_menu">
+                            <input type="hidden" id="modal-user-id" name="id_users">
+                            <div class="text-center text-md-start mt-3">
+                                <button class="btn btn-outline-hokben mr-2" data-bs-dismiss="modal">Back</button>
+                                <button type="submit" class="btn btn-primary">+ Pesan</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- Modal section Checkout-->
+<div class="modal fade" id="exampleModal2" tabindex="-2" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <% if (data_pembayaran.length > 0) { %>
+                <h2 class="fw-bold mb-3">Cart <%= data_pembayaran[0].nama_menu %></h2>
+                <% for(var i=0; i < data_pembayaran.length; i++) { %>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <div class="list-order">
+                            <img src="/images/menu/<%= data_pembayaran[i].gambar_menu %>" height="80px" width="100px"
+                                alt="Product Image">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <p><strong><%= data_pembayaran[i].nama_menu %></strong></p>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="quantity-container text-center text-md-start mt-3">
+                            <input type="number" name="jumlah" class="form-control quantity-input"
+                                value="<%= data_pembayaran[i].jumlah %>">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <p>Rp. <%= data_pembayaran[i].harga_menu * data_pembayaran[i].jumlah %></p>
+                    </div>
+                    <div class="col-12 text-center mt-2">
+                        <a href="/pembayaran/delete/<%= data_pembayaran[i].id_pembayaran %>"
+                            class="btn btn-sm btn-danger">Delete</a>
+                    </div>
+                </div>
+                <% } %>
+                <% } else { %>
+                <p>Cart is empty.</p>
+                <% } %>
+            </div>
+            <div class="d-flex justify-content-end mt-4 me-4 mb-4 gap-3">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                <% if (data_pembayaran.length > 0) { %>
+                <a href="/pembayaran/checkout/<%= id_users %>" class="btn btn-sm btn-warning">Checkout</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
 
-<%- include('../../partials/__modal_checkout.ejs') %>
+
 
 
 
@@ -347,12 +344,13 @@
             <h3 class="footer-title">TAUTAN</h3>
             <div class="footer-links-group">
                 <div class="footer-links-column">
-                    <p class="footer-text"><a href="/perusahaan">Tentang Kami</a></p>
+                    <p class="footer-text"><a href="#">Tentang Kami</a></p>
                     <p class="footer-text"><a href="/contact/users">Kontak Kami</a></p>
+                    <p class="footer-text"><a href="/syarat & ketentuan">Syarat dan Ketentuan</a></p>
                 </div>
                 <div class="footer-links-column-2">
-                    <p class="footer-text"><a href="/syarat & ketentuan">Syarat dan Ketentuan</a></p>
                     <p class="footer-text"><a href="/kebijakan_privasi">Kebijakan Privasi</a></p>
+                    <p class="footer-text"><a href="#">Pelacak Pesanan</a></p>
                 </div>
             </div>
         </div>
@@ -388,6 +386,135 @@
 <script src="../../js/script.js"></script> <!-- Tautan ke file JavaScript -->
 </body>
 
-<%- include('../../partials/__script.ejs') %>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var quantityInput = document.getElementById('quantity-input');
+        var modalMenuIdInput = document.getElementById('modal-menu-id');
+        var modalUserIdInput = document.getElementById('modal-user-id');
+        var minusButton = document.querySelector('.minus-btn');
+        var plusButton = document.querySelector('.plus-btn');
+
+        minusButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            if (quantityInput.value > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+            }
+        });
+
+        plusButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        });
+
+        document.getElementById('orderForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var jumlah = quantityInput.value;
+            var id_menu = modalMenuIdInput.value;
+            var id_users = modalUserIdInput.value;
+
+            var data = {
+                jumlah: jumlah,
+                id_menu: id_menu,
+                id_users: id_users
+            };
+
+            fetch('/pembayaran/store', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = '/menu/users';
+                        console.log(response)
+                    } else {
+                        console.error('Terjadi kesalahan dalam pemrosesan pesanan.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+
+        var modalImage = document.getElementById('modal-image');
+        var modalPrice = document.getElementById('modal-price');
+        var modalComposition = document.getElementById('modal-composition');
+
+        document.querySelectorAll('.pesan-button').forEach(function (button) {
+            button.addEventListener('click', function (event) {
+                var id_menu = button.dataset.idMenu;
+                var id_users = button.dataset.idUsers;
+
+                var card = button.closest('.card');
+                var imageSrc = card.querySelector('.card-image').src;
+                var price = card.querySelector('.keterangan p:nth-child(2)').innerText;
+                var composition = card.querySelector('.keterangan p:nth-child(3)').innerText;
+
+                modalImage.src = imageSrc;
+                modalPrice.innerText = 'Rp. ' + price;
+                modalComposition.innerText = composition;
+
+                modalMenuIdInput.value = id_menu;
+                modalUserIdInput.value = id_users;
+            });
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const quantityInputs = document.querySelectorAll('.quantity-input');
+
+        quantityInputs.forEach(input => {
+            input.addEventListener('change', function () {
+                const jumlah = this.value;
+                const idPembayaran = this.closest('.row').querySelector('.btn-danger')
+                    .getAttribute('href').split('/').pop();
+
+                fetch('/pembayaran/update', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            id_pembayaran: idPembayaran,
+                            jumlah: jumlah
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            console.log('Jumlah diperbarui');
+                        } else {
+                            console.error('Gagal memperbarui jumlah');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+        });
+    });
+</script>
+
+
+<script>
+    function checkLogin() {
+        // Mengambil nilai email dari elemen yang sesuai
+        var email = '<%= email %>';
+
+        // Cek jika email adalah 'Guest'
+        if (email === 'Guest') {
+            // Arahkan pengguna ke halaman login
+            window.location.href = '/login';
+        } else {
+            console.log('Pengguna sudah login');
+        }
+    }
+</script>
+
 
 </html>
